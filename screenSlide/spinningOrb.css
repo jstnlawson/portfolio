@@ -1,0 +1,90 @@
+#hypnotic::before,
+#hypnotic::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 9998;
+}
+
+#hypnotic {
+  position: relative;
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  margin-right: 1vw;
+  overflow: hidden;
+  background-color: black;
+  box-shadow: inset 0 0 0 2px black;
+  border-radius: 50%;
+  z-index: 9999;
+}
+
+#hypnotic::after {
+  width: calc(100% + 10px);
+  height: 100%;
+  left: -10px;
+  opacity: 0.5;
+  background: radial-gradient(circle at 0 50%, var(--after-colors)) -60px 50%,
+    radial-gradient(circle at 0 50%, var(--after-colors)) -50px 50%,
+    radial-gradient(circle at 0 50%, var(--after-colors)) -40px 50%,
+    radial-gradient(circle at 0 50%, var(--after-colors)) -30px 50%,
+    radial-gradient(circle at 0 50%, var(--after-colors)) -20px 50%,
+    radial-gradient(circle at 0 50%, var(--after-colors)) -10px 50%,
+    radial-gradient(circle at 0 50%, var(--after-colors)) 0 50%,
+    radial-gradient(circle at 0 50%, var(--after-colors)) 10px 50%,
+    radial-gradient(circle at 0 50%, var(--after-colors)) 20px 50%,
+    radial-gradient(circle at 0 50%, var(--after-colors)) 30px 50%;
+  background-repeat: no-repeat;
+  background-size: 100px 100px;
+  animation: hypnotic1 2.5s linear infinite;
+}
+
+@media (prefers-reduced-motion) {
+  #hypnotic::before {
+    animation: none;
+  }
+}
+
+#hypnotic::before {
+  width: calc(100% + 10px);
+  height: 100%;
+  right: -10px;
+  opacity: 0.5;
+  background: radial-gradient(circle at 100% 50%, var(--before-colors)) 45px 50%,
+    radial-gradient(circle at 100% 50%, var(--before-colors)) 35px 50%,
+    radial-gradient(circle at 100% 50%, var(--before-colors)) 25px 50%,
+    radial-gradient(circle at 100% 50%, var(--before-colors)) 15px 50%,
+    radial-gradient(circle at 100% 50%, var(--before-colors)) 5px 50%,
+    radial-gradient(circle at 100% 50%, var(--before-colors)) -5px 50%,
+    radial-gradient(circle at 100% 50%, var(--before-colors)) -15px 50%,
+    radial-gradient(circle at 100% 50%, var(--before-colors)) -25px 50%,
+    radial-gradient(circle at 100% 50%, var(--before-colors)) -35px 50%,
+    radial-gradient(circle at 100% 50%, var(--before-colors)) -45px 50%;
+  background-repeat: no-repeat;
+  background-size: 100px 100px;
+  animation: hypnotic2 2.5s linear infinite;
+}
+
+@media (prefers-reduced-motion) {
+  #hypnotic::after {
+    animation: none;
+  }
+}
+
+@keyframes hypnotic1 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes hypnotic2 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-10px);
+  }
+}

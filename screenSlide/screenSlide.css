@@ -1,0 +1,154 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.name-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-left: 4vw;
+  top: 4vw;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.screens-container {
+  display: flex;
+  transition: transform 1.5s ease-in-out;
+}
+
+.screen {
+  width: 100vw;
+  height: 100vh;
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titles-container {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transition: transform 1s ease-in-out;
+  z-index: 5;
+}
+
+.title {
+  display: flex;
+  flex: 0 0 100%;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  transform: translateX(-50%);
+  left: 50%;
+  font-size: 20px;
+  text-transform: lowercase;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  padding: 10px;
+  font-size: 16px;
+  margin: 0 30px;
+  cursor: pointer;
+  z-index: 4;
+  color: white;
+  background-color: transparent;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+button:first-child {
+  right: 70vw;
+}
+
+button:last-child {
+  left: 70vw;
+}
+
+.previous-button {
+    transform: skew(7deg);
+}
+
+.next-button {
+    transform: skew(-7deg);
+}
+
+.screen:nth-child(2) {
+  background-color: #ff00007b;
+}
+
+.screen:nth-child(3) {
+  background-color: #ffff007b;
+}
+
+.screen:nth-child(4) {
+  background-color: #00ff007b;
+}
+
+.screen:nth-child(5) {
+  background-color: #0000ff7b;
+}
+
+.screen:nth-child(6) {
+  background-color: #ff00ff7b;
+}
+
+.screen.active {
+  transform: translateX(-100%);
+  /* changed from zero */
+}
+
+.title.active {
+  transform: translateX(-100%);
+}
+
+.black-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    transparent 0%,
+    transparent 28%,
+    black 29%,
+    black 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.divider {
+  font-size: x-large;
+  font-weight: 400;
+}
+
+.position-title {
+  text-transform: lowercase;
+  font-weight: 400;
+}
+
+h3 {
+  position: relative;
+  /* margin-top: 110px; */
+  text-transform: uppercase;
+  z-index: 5;
+  font-weight: 800;
+}
