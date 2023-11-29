@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel='stylesheet' href='./screenSlide.css' />
     <link rel='stylesheet' href='./spinningOrb.css' />
-    <script defer src='./spinningOrb.js'></script>
-    <script defer src='./screenSlide.js'></script>
+    
     <title>Slide Screens</title>
   </head>
 
@@ -40,9 +39,12 @@
     </div>
 
     <div>
-      <button class="previous-button" onclick="showPreviousScreen()">Previous</button>
-      <button class="next-button" onclick="showNextScreen()">Next</button>
+      <button class="previous-button" onclick="previousScreen()">Previous</button>
+      <button class="next-button" onclick="nextScreen()">Next</button>
     </div>
     <div class="black-background"></div>
+
+    <script defer src='./spinningOrb.js'></script>
+    <!-- <script defer src='./screenSlide.js'></script> -->
   </body>
 </html>

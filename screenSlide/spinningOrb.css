@@ -23,7 +23,7 @@
   width: calc(100% + 10px);
   height: 100%;
   left: -10px;
-  opacity: 0.5;
+  opacity: 0.8;
   background: radial-gradient(circle at 0 50%, var(--after-colors)) -60px 50%,
     radial-gradient(circle at 0 50%, var(--after-colors)) -50px 50%,
     radial-gradient(circle at 0 50%, var(--after-colors)) -40px 50%,
@@ -49,7 +49,7 @@
   width: calc(100% + 10px);
   height: 100%;
   right: -10px;
-  opacity: 0.5;
+  opacity: 0.8;
   background: radial-gradient(circle at 100% 50%, var(--before-colors)) 45px 50%,
     radial-gradient(circle at 100% 50%, var(--before-colors)) 35px 50%,
     radial-gradient(circle at 100% 50%, var(--before-colors)) 25px 50%,

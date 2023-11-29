@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Define an array of color sets
+  const screensContainer = document.querySelector(".screens-container");
+  const titlesContainer = document.querySelector(".titles-container");
+  const hypnotic = document.getElementById("hypnotic");
+
+  window.currentIndex = window.currentIndex || 0;
+  window.currentColorSetIndex = window.currentColorSetIndex || 0;
+  
   const colorSets = [
     {
       before: [
@@ -23,24 +29,24 @@ document.addEventListener("DOMContentLoaded", function () {
         { color: "rgba(255, 255, 255, 0)", position: "60.2%" },
       ],
       after: [
-        { color: "rgba(221, 165, 173, 0)", position: "55%" },
-        { color: "rgba(221, 165, 173, 0.8)", position: "55.2%" },
-        { color: "rgba(221, 165, 173, 0.8)", position: "60%" },
-        { color: "rgba(221, 165, 173, 0)", position: "60.2%" },
+        { color: "rgba(222, 166, 174, 0)", position: "55%" },
+        { color: "rgba(222, 166, 174, 0.8)", position: "55.2%" },
+        { color: "rgba(222, 166, 174, 0.8)", position: "60%" },
+        { color: "rgba(222, 166, 174, 0)", position: "60.2%" },  
       ],
     },
     {
       before: [
-        { color: "rgba(51, 75, 92, 0)", position: "55%" },
-        { color: "rgba(51, 75, 92, 0.8)", position: "55.2%" },
-        { color: "rgba(51, 75, 92, 0.8)", position: "60%" },
-        { color: "rgba(51, 75, 92, 0)", position: "60.2%" },
-      ],
-      after: [
         { color: "rgba(229, 145, 99, 0)", position: "55%" },
         { color: "rgba(229, 145, 99, 0.8)", position: "55.2%" },
         { color: "rgba(229, 145, 99, 0.8)", position: "60%" },
         { color: "rgba(229, 145, 99, 0)", position: "60.2%" },
+      ],
+      after: [
+        { color: "rgba(51, 75, 92, 0)", position: "55%" },
+        { color: "rgba(51, 75, 92, 0.8)", position: "55.2%" },
+        { color: "rgba(51, 75, 92, 0.8)", position: "60%" },
+        { color: "rgba(51, 75, 92, 0)", position: "60.2%" },
       ],
     },
     {
@@ -59,18 +65,31 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  // Initialize the current color set index
-  let currentColorSetIndex = 0;
+  function nextScreen() {
+    if (window.currentIndex < screensContainer.children.length - 1) {
+      window.currentIndex++;
+      window.currentColorSetIndex = (window.currentColorSetIndex + 1) % colorSets.length; 
+    }
+    updateScreens();
+  }
+  
+  function previousScreen() {
+    if (window.currentIndex > 0) {
+      window.currentIndex--;
+      window.currentColorSetIndex = (window.currentColorSetIndex - 1 + colorSets.length) % colorSets.length; 
+    }
+    updateScreens();
+  }
+
+  function updateScreens() {
+    screensContainer.style.transform = `translateX(-${window.currentIndex * 100}%)`;
+    titlesContainer.style.transform = `translateX(-${window.currentIndex * 100}%)`;
+    changeOrbColors();
+  }
 
   function changeOrbColors() {
-    console.log("Changing orb colors");
-    // Get the current color set
-    const currentColorSet = colorSets[currentColorSetIndex];
+    const currentColorSet = colorSets[window.currentColorSetIndex];
 
-    // Update the colors of the ::before and ::after pseudo-elements using the current color set
-    const hypnotic = document.getElementById("hypnotic");
-
-    // Update the ::before colors
     hypnotic.style.setProperty(
       "--before-colors",
       currentColorSet.before
@@ -78,54 +97,16 @@ document.addEventListener("DOMContentLoaded", function () {
         .join(", ")
     );
 
-    // Update the ::after colors
     hypnotic.style.setProperty(
       "--after-colors",
       currentColorSet.after
         .map((color) => `${color.color} ${color.position}`)
         .join(", ")
     );
-
-    // Increment the color set index or reset to 0 if it exceeds the array length
-    currentColorSetIndex = (currentColorSetIndex + 1) % colorSets.length;
   }
 
-  // Call the function to initially set the colors
   changeOrbColors();
 
-  // Log specific styles after color change
-  console.log("Width:", window.getComputedStyle(hypnotic).width);
-  console.log("Height:", window.getComputedStyle(hypnotic).height);
-  console.log(
-    "Background Color:",
-    window.getComputedStyle(hypnotic).backgroundColor
-  );
-  console.log("Border Radius:", window.getComputedStyle(hypnotic).borderRadius);
-  console.log(
-    "Before Colors:",
-    window.getComputedStyle(hypnotic).getPropertyValue("--before-colors")
-  );
-  console.log(
-    "After Colors:",
-    window.getComputedStyle(hypnotic).getPropertyValue("--after-colors")
-  );
-
-  function cycleColors(direction) {
-    console.log("Cycling colors");
-    if (direction === "next") {
-      currentColorSetIndex = (currentColorSetIndex + 1) % colorSets.length;
-    } else if (direction === "previous") {
-      currentColorSetIndex =
-        (currentColorSetIndex - 1 + colorSets.length) % colorSets.length;
-    }
-
-    // Call the function to update the colors
-    changeOrbColors();
-  }
-
-  // After calling changeOrbColors
-
-  // Call the function with your desired colors
-  window.changeOrbColors = changeOrbColors;
-  window.cycleColors = cycleColors;
+  window.nextScreen = nextScreen;
+  window.previousScreen = previousScreen;
 });
