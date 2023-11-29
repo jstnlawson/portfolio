@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel='stylesheet' href='./screenSlide.css' />
     <link rel='stylesheet' href='./spinningOrb.css' />
-    
+    <script defer src='./spinningOrb.js'></script>
     <title>Slide Screens</title>
   </head>
 
@@ -21,7 +21,9 @@
 
     <div class="screens-container">
       <div class="screen"></div>
-      <div class="screen"></div>
+      <div class="screen">
+        <img class="meeboard" src="./images/meeboard-crop.png" alt="Audio keyboard" />
+      </div>
       <div class="screen"></div>
       <div class="screen"></div>
       <div class="screen"></div>
@@ -30,7 +32,13 @@
 
     <div class="titles-container">
       <div class="title"></div>
-      <div class="title">Red</div>
+      <div class="title">
+        <span class="tech-stack">web audio api | react | css</span>
+        <span class="project-title">meeboard</span>
+        <span class="project-description">
+          A web-based audio keyboard that allows users to record their own 
+          sounds and play them back at different pitches on the keyboard.
+      </div>
       <div class="title">Yellow</div>
       <div class="title">Green</div>
       <div class="title">Blue</div>
@@ -44,7 +52,7 @@
     </div>
     <div class="black-background"></div>
 
-    <script defer src='./spinningOrb.js'></script>
+    
     <!-- <script defer src='./screenSlide.js'></script> -->
   </body>
 </html>

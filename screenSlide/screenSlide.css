@@ -37,13 +37,14 @@ html {
   display: flex;
   position: absolute;
   left: 50%;
-  bottom: 10%;
-  transition: transform 1s ease-in-out;
+  bottom: 3%;
+  transition: transform 1.4s ease-in-out;
   z-index: 5;
 }
 
 .title {
   display: flex;
+  flex-direction: column;
   flex: 0 0 100%;
   align-items: center;
   justify-content: center;
@@ -79,16 +80,20 @@ button:last-child {
   left: 70vw;
 }
 
-.previous-button {
-    transform: skew(7deg);
-}
+/* .previous-button {
+    transform: skew(2deg);
+} */
 
-.next-button {
-    transform: skew(-7deg);
-}
+/* .next-button {
+    transform: skew(-2deg);
+} */
 
 .screen:nth-child(2) {
-  background-color: #ff00007b;
+  background: linear-gradient(
+          to bottom,
+          white,
+          rgb(218, 138, 150)
+        );
 }
 
 .screen:nth-child(3) {
@@ -125,8 +130,8 @@ button:last-child {
   background: radial-gradient(
     circle,
     transparent 0%,
-    transparent 28%,
-    black 29%,
+    transparent 25%,
+    black 26%,
     black 100%
   );
   display: flex;
@@ -143,6 +148,7 @@ button:last-child {
 .position-title {
   text-transform: lowercase;
   font-weight: 400;
+
 }
 
 h3 {
@@ -151,4 +157,27 @@ h3 {
   text-transform: uppercase;
   z-index: 5;
   font-weight: 800;
+}
+
+.meeboard {
+  width: 20vw;
+  height: auto;
+  border-radius: 3px;
+}
+
+.tech-stack {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.project-title {
+  margin-bottom: 5px;
+  color: rgba(222, 166, 174, 1); 
+  
+}
+
+.project-description{
+  font-size: 15px;
+  width: 20vw;
+  margin-bottom: 5px;
 }

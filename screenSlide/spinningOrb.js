@@ -9,10 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const colorSets = [
     {
       before: [
-        { color: "rgba(128, 128, 128, 0)", position: "55%" },
-        { color: "rgba(128, 128, 128, 0.8)", position: "55.2%" },
-        { color: "rgba(128, 128, 128, 0.8)", position: "60%" },
-        { color: "rgba(128, 128, 128, 0)", position: "60.2%" },
+        // { color: "rgba(128, 128, 128, 0)", position: "55%" },
+        // { color: "rgba(128, 128, 128, 0.8)", position: "55.2%" },
+        // { color: "rgba(128, 128, 128, 0.8)", position: "60%" },
+        // { color: "rgba(128, 128, 128, 0)", position: "60.2%" },
+        { color: "rgba(255, 255, 255, 0)", position: "55%" },
+        { color: "rgba(255, 255, 255, 0.5)", position: "55.2%" },
+        { color: "rgba(255, 255, 255, 0.5)", position: "60%" },
+        { color: "rgba(255, 255, 255, 0)", position: "60.2%" },
       ],
       after: [
         { color: "rgba(255, 255, 255, 0)", position: "55%" },
@@ -23,24 +27,32 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       before: [
-        { color: "rgba(255, 255, 255, 0)", position: "55%" },
-        { color: "rgba(255, 255, 255, 0.8)", position: "55.2%" },
-        { color: "rgba(255, 255, 255, 0.8)", position: "60%" },
-        { color: "rgba(255, 255, 255, 0)", position: "60.2%" },
+        { color: "rgba(222, 166, 174, 0)", position: "55%" },
+        { color: "rgba(222, 166, 174, 0.9)", position: "55.2%" },
+        { color: "rgba(222, 166, 174, 0.9)", position: "60%" },
+        { color: "rgba(222, 166, 174, 0)", position: "60.2%" }, 
+        // { color: "rgba(255, 255, 255, 0)", position: "55%" },
+        // { color: "rgba(255, 255, 255, 0.8)", position: "55.2%" },
+        // { color: "rgba(255, 255, 255, 0.8)", position: "60%" },
+        // { color: "rgba(255, 255, 255, 0)", position: "60.2%" },
       ],
       after: [
         { color: "rgba(222, 166, 174, 0)", position: "55%" },
-        { color: "rgba(222, 166, 174, 0.8)", position: "55.2%" },
-        { color: "rgba(222, 166, 174, 0.8)", position: "60%" },
+        { color: "rgba(222, 166, 174, 0.9)", position: "55.2%" },
+        { color: "rgba(255, 255, 255, 0.6)", position: "60%" },
         { color: "rgba(222, 166, 174, 0)", position: "60.2%" },  
       ],
     },
     {
       before: [
-        { color: "rgba(229, 145, 99, 0)", position: "55%" },
-        { color: "rgba(229, 145, 99, 0.8)", position: "55.2%" },
-        { color: "rgba(229, 145, 99, 0.8)", position: "60%" },
-        { color: "rgba(229, 145, 99, 0)", position: "60.2%" },
+        { color: "rgba(51, 75, 92, 0)", position: "55%" },
+        { color: "rgba(51, 75, 92, 0.8)", position: "55.2%" },
+        { color: "rgba(51, 75, 92, 0.8)", position: "60%" },
+        { color: "rgba(51, 75, 92, 0)", position: "60.2%" },
+        // { color: "rgba(229, 145, 99, 0)", position: "55%" },
+        // { color: "rgba(229, 145, 99, 0.8)", position: "55.2%" },
+        // { color: "rgba(229, 145, 99, 0.8)", position: "60%" },
+        // { color: "rgba(229, 145, 99, 0)", position: "60.2%" },
       ],
       after: [
         { color: "rgba(51, 75, 92, 0)", position: "55%" },
@@ -51,10 +63,14 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       before: [
-        { color: "rgba(255, 255, 255, 0)", position: "55%" },
-        { color: "rgba(255, 255, 255, 0.8)", position: "55.2%" },
-        { color: "rgba(255, 255, 255, 0.8)", position: "60%" },
-        { color: "rgba(255, 255, 255, 0)", position: "60.2%" },
+        { color: "rgba(206, 111, 89, 0)", position: "55%" },
+        { color: "rgba(206, 111, 89, 0.8)", position: "55.2%" },
+        { color: "rgba(206, 111, 89, 0.8)", position: "60%" },
+        { color: "rgba(206, 111, 89, 0)", position: "60.2%" },
+        // { color: "rgba(255, 255, 255, 0)", position: "55%" },
+        // { color: "rgba(255, 255, 255, 0.8)", position: "55.2%" },
+        // { color: "rgba(255, 255, 255, 0.8)", position: "60%" },
+        // { color: "rgba(255, 255, 255, 0)", position: "60.2%" },
       ],
       after: [
         { color: "rgba(206, 111, 89, 0)", position: "55%" },
