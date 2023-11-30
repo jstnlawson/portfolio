@@ -29,33 +29,9 @@ html {
   height: 100vh;
   flex: 0 0 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.titles-container {
-  display: flex;
-  position: absolute;
-  left: 50%;
-  bottom: 3%;
-  transition: transform 1.4s ease-in-out;
-  z-index: 5;
-}
-
-.title {
-  display: flex;
   flex-direction: column;
-  flex: 0 0 100%;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  color: white;
-  font-size: 24px;
-  text-align: center;
-  transform: translateX(-50%);
-  left: 50%;
-  font-size: 20px;
-  text-transform: lowercase;
 }
 
 button {
@@ -79,14 +55,6 @@ button:first-child {
 button:last-child {
   left: 70vw;
 }
-
-/* .previous-button {
-    transform: skew(2deg);
-} */
-
-/* .next-button {
-    transform: skew(-2deg);
-} */
 
 .screen:nth-child(2) {
   background: linear-gradient(
@@ -117,9 +85,7 @@ button:last-child {
   /* changed from zero */
 }
 
-.title.active {
-  transform: translateX(-100%);
-}
+
 
 .black-background {
   position: absolute;
@@ -162,7 +128,37 @@ h3 {
 .meeboard {
   width: 20vw;
   height: auto;
-  border-radius: 3px;
+  border-radius: 4px;
+}
+
+/* .title.active {
+  transform: translateX(-100%);
+} */
+
+.titles-container {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  transition: transform 1.4s ease-in-out;
+  z-index: 5;
+  
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 100%;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  transform: translateX(-50%);
+  left: 50%;
+  font-size: 20px;
+  text-transform: lowercase;  
 }
 
 .tech-stack {
@@ -172,12 +168,30 @@ h3 {
 
 .project-title {
   margin-bottom: 5px;
-  color: rgba(222, 166, 174, 1); 
-  
+  color: rgba(222, 166, 174, 1);  
 }
 
 .project-description{
   font-size: 15px;
   width: 20vw;
-  margin-bottom: 5px;
+  margin-bottom: 5px; 
 }
+
+/* .tech-stack, .project-description {
+  animation-name: animateIn;
+  animation-delay: 2700ms;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes animateIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-8px);
+  }
+  
+  100% {
+    opacity: 1;
+  }
+} */

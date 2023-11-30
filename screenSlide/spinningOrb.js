@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.currentIndex = window.currentIndex || 0;
   window.currentColorSetIndex = window.currentColorSetIndex || 0;
-  
+
   const colorSets = [
     {
       before: [
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { color: "rgba(222, 166, 174, 0)", position: "55%" },
         { color: "rgba(222, 166, 174, 0.9)", position: "55.2%" },
         { color: "rgba(222, 166, 174, 0.9)", position: "60%" },
-        { color: "rgba(222, 166, 174, 0)", position: "60.2%" }, 
+        { color: "rgba(222, 166, 174, 0)", position: "60.2%" },
         // { color: "rgba(255, 255, 255, 0)", position: "55%" },
         // { color: "rgba(255, 255, 255, 0.8)", position: "55.2%" },
         // { color: "rgba(255, 255, 255, 0.8)", position: "60%" },
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { color: "rgba(222, 166, 174, 0)", position: "55%" },
         { color: "rgba(222, 166, 174, 0.9)", position: "55.2%" },
         { color: "rgba(255, 255, 255, 0.6)", position: "60%" },
-        { color: "rgba(222, 166, 174, 0)", position: "60.2%" },  
+        { color: "rgba(222, 166, 174, 0)", position: "60.2%" },
       ],
     },
     {
@@ -84,22 +84,56 @@ document.addEventListener("DOMContentLoaded", function () {
   function nextScreen() {
     if (window.currentIndex < screensContainer.children.length - 1) {
       window.currentIndex++;
-      window.currentColorSetIndex = (window.currentColorSetIndex + 1) % colorSets.length; 
+      window.currentColorSetIndex =
+        (window.currentColorSetIndex + 1) % colorSets.length;
     }
     updateScreens();
   }
-  
+
   function previousScreen() {
     if (window.currentIndex > 0) {
       window.currentIndex--;
-      window.currentColorSetIndex = (window.currentColorSetIndex - 1 + colorSets.length) % colorSets.length; 
+      window.currentColorSetIndex =
+        (window.currentColorSetIndex - 1 + colorSets.length) % colorSets.length;
     }
     updateScreens();
   }
 
   function updateScreens() {
-    screensContainer.style.transform = `translateX(-${window.currentIndex * 100}%)`;
-    titlesContainer.style.transform = `translateX(-${window.currentIndex * 100}%)`;
+    const titles = document.querySelectorAll(".title");
+
+    // Remove animation classes from all titles and elements within them
+    titles.forEach((title) => {
+      title.classList.remove("active");
+      title
+        .querySelectorAll(".tech-stack, .project-title, .project-description")
+        .forEach((element) => {
+          element.style.opacity = 0;
+          element.style.transform = "scale(0.3) translateY(-8px)";
+        });
+    });
+
+    // Add animation classes to the active title and elements within it
+    const activeTitle = titles[window.currentIndex];
+    setTimeout(() => {
+      activeTitle.classList.add("active");
+
+      // Set transition properties for elements outside the loop
+      activeTitle
+        .querySelectorAll(".tech-stack, .project-title, .project-description")
+        .forEach((element) => {
+          element.style.transition =
+            "opacity 0.5s ease-in-out, transform 0.5s ease-in-out";
+          element.style.opacity = 1;
+          element.style.transform = "scale(1) translateY(0)";
+        });
+    }, 1000); // Adjust the delay as needed
+    screensContainer.style.transform = `translateX(-${
+      window.currentIndex * 100
+    }%)`;
+    titlesContainer.style.transform = `translateX(-${
+      window.currentIndex * 100
+    }%)`;
     changeOrbColors();
   }
 
