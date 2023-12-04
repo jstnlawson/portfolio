@@ -6,13 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
   window.currentIndex = window.currentIndex || 0;
   window.currentColorSetIndex = window.currentColorSetIndex || 0;
 
-  const colorSets = [
+  const orbColorSets = [
     {
       before: [
-        // { color: "rgba(128, 128, 128, 0)", position: "55%" },
-        // { color: "rgba(128, 128, 128, 0.8)", position: "55.2%" },
-        // { color: "rgba(128, 128, 128, 0.8)", position: "60%" },
-        // { color: "rgba(128, 128, 128, 0)", position: "60.2%" },
         { color: "rgba(255, 255, 255, 0)", position: "55%" },
         { color: "rgba(255, 255, 255, 0.5)", position: "55.2%" },
         { color: "rgba(255, 255, 255, 0.5)", position: "60%" },
@@ -31,10 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { color: "rgba(222, 166, 174, 0.9)", position: "55.2%" },
         { color: "rgba(222, 166, 174, 0.9)", position: "60%" },
         { color: "rgba(222, 166, 174, 0)", position: "60.2%" },
-        // { color: "rgba(255, 255, 255, 0)", position: "55%" },
-        // { color: "rgba(255, 255, 255, 0.8)", position: "55.2%" },
-        // { color: "rgba(255, 255, 255, 0.8)", position: "60%" },
-        // { color: "rgba(255, 255, 255, 0)", position: "60.2%" },
       ],
       after: [
         { color: "rgba(222, 166, 174, 0)", position: "55%" },
@@ -49,10 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { color: "rgba(51, 75, 92, 0.8)", position: "55.2%" },
         { color: "rgba(51, 75, 92, 0.8)", position: "60%" },
         { color: "rgba(51, 75, 92, 0)", position: "60.2%" },
-        // { color: "rgba(229, 145, 99, 0)", position: "55%" },
-        // { color: "rgba(229, 145, 99, 0.8)", position: "55.2%" },
-        // { color: "rgba(229, 145, 99, 0.8)", position: "60%" },
-        // { color: "rgba(229, 145, 99, 0)", position: "60.2%" },
       ],
       after: [
         { color: "rgba(51, 75, 92, 0)", position: "55%" },
@@ -67,10 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { color: "rgba(206, 111, 89, 0.8)", position: "55.2%" },
         { color: "rgba(206, 111, 89, 0.8)", position: "60%" },
         { color: "rgba(206, 111, 89, 0)", position: "60.2%" },
-        // { color: "rgba(255, 255, 255, 0)", position: "55%" },
-        // { color: "rgba(255, 255, 255, 0.8)", position: "55.2%" },
-        // { color: "rgba(255, 255, 255, 0.8)", position: "60%" },
-        // { color: "rgba(255, 255, 255, 0)", position: "60.2%" },
       ],
       after: [
         { color: "rgba(206, 111, 89, 0)", position: "55%" },
@@ -85,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.currentIndex < screensContainer.children.length - 1) {
       window.currentIndex++;
       window.currentColorSetIndex =
-        (window.currentColorSetIndex + 1) % colorSets.length;
+        (window.currentColorSetIndex + 1) % orbColorSets.length;
     }
     updateScreens();
   }
@@ -94,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.currentIndex > 0) {
       window.currentIndex--;
       window.currentColorSetIndex =
-        (window.currentColorSetIndex - 1 + colorSets.length) % colorSets.length;
+        (window.currentColorSetIndex - 1 + orbColorSets.length) % orbColorSets.length;
     }
     updateScreens();
   }
@@ -109,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .querySelectorAll(".tech-stack, .project-title, .project-description")
         .forEach((element) => {
           element.style.opacity = 0;
-          element.style.transform = "scale(0.3) translateY(-8px)";
+          element.style.transform = "scale(0.1) translateY(-80px)";
         });
     });
 
@@ -138,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function changeOrbColors() {
-    const currentColorSet = colorSets[window.currentColorSetIndex];
+    const currentColorSet = orbColorSets[window.currentColorSetIndex];
 
     hypnotic.style.setProperty(
       "--before-colors",
