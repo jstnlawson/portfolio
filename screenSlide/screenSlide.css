@@ -7,13 +7,29 @@ html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+body {
+  max-height: 100vh;
+}
+
+.wrapper {
+  min-width: 320px;
+  max-width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .name-container {
   position: absolute;
   display: flex;
   align-items: center;
-  margin-left: 4vw;
-  top: 4vw;
+  /* margin-left: 4vw;
+  top: 4vw; */
   color: white;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -26,7 +42,7 @@ html {
 
 .screen {
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
   flex: 0 0 100%;
   display: flex;
   flex-direction: column;
@@ -44,8 +60,8 @@ button {
   /* background-color: rgb(40, 40, 40); */
   /* box-shadow: 1px 1px 1px rgba(14, 13, 13, 0.6); */
   background-color: transparent;
-  width: 6em;
-  height: 6em;
+  width: 7em;
+  height: 7em;
   position: absolute;
   top: 60%;
   z-index: 4;
@@ -111,8 +127,6 @@ button:last-child {
       inset -1px -1px 1px transparent,
       2px 2px 4px transparent;
 }
-
-
 
 .screen:nth-child(2) {
   background: linear-gradient(
@@ -204,7 +218,6 @@ h3 {
   flex: 0 0 100%;
   align-items: center;
   justify-content: center;
-  width: 100vw;
   color: white;
   font-size: 24px;
   text-align: center;
@@ -219,14 +232,27 @@ h3 {
   margin-bottom: 5px;
 }
 
-.project-title {
-  margin-bottom: 5px;
-  color: rgba(222, 166, 174, 1);  
+.project-title-1, .project-title-2, .project-title-3, .project-title-4, .project-title-5, .project-title-6 {
+  cursor: pointer;
+  margin-bottom: 5px;  
+}
+
+.project-title-1:hover, .project-title-2:hover, .project-title-3:hover, .project-title-4:hover, .project-title-5:hover, .project-title-6:hover {
+  opacity: 0.5;; 
+}
+
+.project-title-1 {
+  color: white;
+}
+
+.project-title-2 {
+  color: rgba(222, 166, 174, 1);
 }
 
 .project-description{
   font-size: 15px;
-  width: 20vw;
+  width: 90vw;
+  max-width: 500px;
   margin-bottom: 5px;
   text-wrap: balance; 
 }
