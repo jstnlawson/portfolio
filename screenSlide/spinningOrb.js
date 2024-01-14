@@ -37,16 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       before: [
-        { color: "rgba(51, 75, 92, 0)", position: "55%" },
-        { color: "rgba(51, 75, 92, 0.8)", position: "55.2%" },
-        { color: "rgba(51, 75, 92, 0.8)", position: "60%" },
-        { color: "rgba(51, 75, 92, 0)", position: "60.2%" },
+        { color: "rgba(200, 250, 255, 0)", position: "55%" },
+        { color: "rgba(200, 250, 255, 0.8)", position: "55.2%" },
+        { color: "rgba(200, 250, 255, 0.8)", position: "60%" },
+        { color: "rgba(200, 250, 255, 0)", position: "60.2%" },
       ],
       after: [
-        { color: "rgba(51, 75, 92, 0)", position: "55%" },
-        { color: "rgba(51, 75, 92, 0.8)", position: "55.2%" },
-        { color: "rgba(51, 75, 92, 0.8)", position: "60%" },
-        { color: "rgba(51, 75, 92, 0)", position: "60.2%" },
+        { color: "rgba(220, 125, 100, 0)", position: "55%" },
+        { color: "rgba(220, 125, 100, 0.8)", position: "55.2%" },
+        { color: "rgba(220, 125, 100, 0.8)", position: "60%" },
+        { color: "rgba(220, 125, 100, 0)", position: "60.2%" },
       ],
     },
     {
