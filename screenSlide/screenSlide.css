@@ -23,7 +23,7 @@ html {
 }
 
 .bumper {
-  padding-top: 5vh;
+  padding-top: 4vh;
   padding-bottom: 5vh;
   height: 100%;
 }
@@ -151,7 +151,7 @@ button:last-child {
 }
 
 .screen:nth-child(4) {
-  background-color: #00ff007b;
+  background-color: #334b5c;
 }
 
 .screen:nth-child(5) {
@@ -209,6 +209,7 @@ h3 {
 .img {
   width: 20vw;
   min-width: 135px;
+  margin-top: 1vh;
 }
 
 .img-meeboard {
@@ -250,8 +251,12 @@ h3 {
   margin-bottom: 5px;  
 }
 
-.project-title-1:hover, .project-title-2:hover, .project-title-3:hover, .project-title-4:hover, .project-title-5:hover, .project-title-6:hover {
-  opacity: 0.5;; 
+.project-title-2, .project-title-3, .project-title-4, .project-title-5, .project-title-6 {
+  text-decoration: underline;
+}
+
+.project-title-2:hover, .project-title-3:hover, .project-title-4:hover, .project-title-5:hover, .project-title-6:hover {
+  opacity: 0.5;
 }
 
 .project-title-1 {
@@ -264,6 +269,11 @@ h3 {
 
 .project-title-3 {
   color: #cafcfe;
+}
+
+.project-title-4 {
+  color: #f1e9e3;
+  /* color: #334b5c; */
 }
 
 .project-description{
