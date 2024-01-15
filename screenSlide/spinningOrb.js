@@ -65,6 +65,30 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
+  disableButton();
+
+  function disableButton() {
+    const insidePreviousButton = document.querySelector(".previous-button-inside");
+    const insideNextButton = document.querySelector(".next-button-inside");
+
+    if (window.currentIndex === 0) {
+      console.log("inside currentIndex === 0");
+      insidePreviousButton.classList.add("disabled-button");
+    } 
+    if (window.currentIndex === screensContainer.children.length - 1) {
+      console.log("inside currentIndex === screensContainer.children.length - 1");
+      insideNextButton.classList.add("disabled-button");
+    }
+    if (window.currentIndex > 0){
+      console.log("inside currentIndex > 0");
+      insidePreviousButton.classList.remove("disabled-button");
+    }
+    if (window.currentIndex < screensContainer.children.length - 1) {
+      console.log("inside currentIndex < screensContainer.children.length - 1");
+      insideNextButton.classList.remove("disabled-button");
+    }
+  }
+
   function nextScreen() {
     if (window.currentIndex < screensContainer.children.length - 1) {
       window.currentIndex++;
@@ -72,15 +96,18 @@ document.addEventListener("DOMContentLoaded", function () {
         (window.currentColorSetIndex + 1) % orbColorSets.length;
     }
     updateScreens();
+    disableButton();
   }
 
   function previousScreen() {
+
     if (window.currentIndex > 0) {
       window.currentIndex--;
       window.currentColorSetIndex =
         (window.currentColorSetIndex - 1 + orbColorSets.length) % orbColorSets.length;
     }
     updateScreens();
+    disableButton();
   }
 
   function updateScreens() {
