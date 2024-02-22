@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       before: [
         { color: "rgba(240, 230, 230, 0)", position: "55%" },
-        { color: "rgba(240, 230, 230, 0.8)", position: "55.2%" },
-        { color: "rgba(240, 230, 230, 0.8)", position: "60%" },
+        { color: "rgba(240, 230, 230, 1)", position: "55.2%" },
+        { color: "rgba(240, 230, 230, 1)", position: "60%" },
         { color: "rgba(240, 230, 230, 0)", position: "60.2%" },        
       ],
       after: [

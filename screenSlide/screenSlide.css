@@ -170,8 +170,9 @@ button:last-child { left: 70vw; }
   background: linear-gradient(
           to bottom,
           #cdd7de,
-          #334b5c,
-          #273d4d
+          #334b5cb3,
+          #334b5cf5,
+          #cdd7de
         );
   /* background-color: #334b5c; */
 }
