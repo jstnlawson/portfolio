@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create the stars
         createStar('star-one', 1000); //  transparent 1px stars
         createStar('star-two', 100);  //  1/2 transparent 1px stars
-        createStar('star-three', 50); // 1px stars
-        createStar('star-four', 25);  // 1px with box shadow
-        createStar('star-five', 10);  // 2px stars
+        createStar('star-three', 75); // 1px stars
+        createStar('star-four', 50);  // 1px with box shadow
+        createStar('star-five', 25);  // 2px stars
     }
     
     // Run the function to populate the stars
