@@ -71,16 +71,16 @@ body {
     z-index: 1000;
 }
 
-.planet-bottom {
+.planet {
     height: 250vh;
     width: 100vw;
-    background: linear-gradient(to bottom, #ffd632, #6a5812 , #000 8%, #000 92%, rgba(255, 255, 255, 0.339));
+    background: linear-gradient(to bottom, #ffd632, #6a5812 , #000 8%, #000 88%, rgba(255, 255, 255, 0.339));
     clip-path: ellipse(150% 100% at 50% 0%);
 }
 
 .space-sky {
     height: 450vh;
-    background: linear-gradient(to bottom, #000 10%, rgba(51, 58, 255, 0.3), rgba(255, 65, 188, 0.375), rgba(51, 102, 255, 0.3), #000 50%, #000 80%);
+    background: linear-gradient(to bottom, #000 10%, rgba(51, 58, 255, 0.3), rgba(255, 65, 188, 0.375), rgba(51, 102, 255, 0.3), rgba(105, 2, 152, 0.3) 50%, #000 60%, #000 80%);
 }
 
 .black-cloud {
@@ -206,4 +206,41 @@ body {
     mask-image: linear-gradient(to right, transparent,  black 35%, black 65%, transparent);
     z-index: 2000;
 }
+
+.star {
+    position: absolute; 
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    z-index: 2000;
+}
+
+.star-one {
+    width: 1px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.star-two {
+    width: 1px;
+    height: 1px; 
+}
+
+.star-three {
+    width: 1px;
+    height: 1px; 
+    background-color: white;
+}
+
+.star-four {
+    width: 1px;
+    height: 1px;
+    box-shadow: 0 0 5px 1px white; 
+}
+
+.star-five {
+    width: 2px;
+    height: 2px;
+    box-shadow: 0 0 5px 1px white;
+}
+
 
