@@ -60,6 +60,52 @@ body {
     z-index: 1;
 }
 
+.cloud {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: 3000;
+}
+
+.cloud div {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.6);
+}
+
+.puff-one {
+    top: 20%;
+    left: 40%;
+}
+
+.puff-two {
+    top: 22%;
+    left: 42%;
+}
+
+.puff-three {
+    top: 20%;
+    left: 45%;
+}
+
+.puff-four {
+    top: 18%;
+    left: 47%;
+}
+
+.puff-five {
+    top: 40%;
+    left: 20%;
+}
+
+.puff-six {
+    top: 40%;
+    left: 40%;
+}
+
 .bird {
     position: relative;
     z-index: 2000;
@@ -331,6 +377,93 @@ body {
     align-items: center;
     z-index: 2000;
 }
+
+.white-wisp--top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 30vh;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.1) 10%,
+        rgba(255, 255, 255, 0.3) 30%,
+        rgba(255, 255, 255, 0.4)50%,
+        rgba(255, 255, 255, 0.3) 70%,
+        rgba(255, 255, 255, 0.1) 90%,
+
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.9) 6%, black 8%, black 92%, rgba(0, 0, 0, 0.9) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
+    mask-image: linear-gradient(to right, transparent,  black 25%, black 55%, transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.cloud-one__container {
+    position: relative;
+    top: 0;
+    left: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.white-wisp--middle {
+    position: absolute;
+    top: 16vh;
+    left: 25vw;
+    width: 60vw;
+    height: 10vh;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.1) 10%,
+        rgba(255, 255, 255, 0.3) 30%,
+        rgba(255, 255, 255, 0.4)50%,
+        rgba(255, 255, 255, 0.3) 70%,
+        rgba(255, 255, 255, 0.1) 90%,
+
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.9) 6%, black 8%, black 92%, rgba(0, 0, 0, 0.9) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
+    mask-image: linear-gradient(to right, transparent,  black 25%, black 55%, transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.white-wisp--bottom {
+    position: absolute;
+    top: 8vh;
+    left: -21vw;
+    width: 50vw;
+    height: 12vh;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.1) 10%,
+        rgba(255, 255, 255, 0.3) 30%,
+        rgba(255, 255, 255, 0.4)50%,
+        rgba(255, 255, 255, 0.3) 70%,
+        rgba(255, 255, 255, 0.1) 90%,
+
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.9) 6%, black 8%, black 92%, rgba(0, 0, 0, 0.9) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
+    mask-image: linear-gradient(to right, transparent,  black 25%, black 55%, transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+
 
 .green-wisp {
     position: absolute;
