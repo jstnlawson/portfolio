@@ -110,7 +110,7 @@ body {
     position: relative;
     z-index: 2000;
     transform: scale(0.3);
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .bird-body {
@@ -260,7 +260,7 @@ body {
     /* background: linear-gradient(to bottom, #ffd632, #6a5812 , #000 8% ); */
     clip-path: ellipse(250% 100% at 50% 100%);
     height: 500vh;
-    /* z-index: 1000; */
+    z-index: 1000;
 }
 
 .planet {
@@ -521,6 +521,180 @@ body {
     width: 2px;
     height: 2px;
     box-shadow: 0 0 5px 1px white;
+}
+
+.space-ship {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    position: relative;
+    top: -60vh;
+    z-index: 3000;
+}
+
+.space-ship__base {
+    position: absolute;
+    width: 600px;
+    height: 100px;
+    background-color: white;
+    box-shadow: inset 0 0 40px 30px #111;
+    border-radius: 0 0 60px 60px;
+}
+
+.space-ship__bottom {
+    position: absolute;
+    bottom: -90px;
+    width: 300px;
+    height: 100px;
+    background-color: white;
+    box-shadow: inset 0 0 40px 30px #111;
+    border-radius: 0 0 60px 60px;
+}
+
+.space-ship__left-engine {
+    position: absolute;
+    top: -270px;
+    left: 80px;
+    width: 260px;
+    height: 260px;
+    background-color: white;
+    border-radius: 50% 50% 30px 50%; 
+    box-shadow: inset 0 0 40px 30px #111;
+}
+
+.space-ship__middle-engine {
+    position: absolute;
+    top: -410px;
+    left: 306px;
+    width: 260px;
+    height: 200px;
+    background-color: white;
+    border-radius: 240px 240px 60px 60px;
+    box-shadow: inset 0 0 40px 30px #111;
+}
+
+.space-ship__middle-engine--fan {
+    position: relative;
+    top: 50px;
+    left: 32px;
+    width: 180px;
+    height: 120px;
+    background-color: #111;
+    background: radial-gradient(
+        circle,
+        #333 0%,
+        #222 20%,
+        #000 30%,
+        #444 100%
+    );
+    border-radius: 120px 120px 30px 30px;
+    border-top: 8px solid #939393;
+    border-right: 8px solid #939393;
+    border-bottom: 8px solid #838383;
+    border-left: 8px solid #939393;
+    box-shadow: 20px 40px 10px -20px #222;
+}
+
+.space-ship__right-engine {
+    position: absolute;
+    top: -270px;
+    right: 80px;
+    width: 260px;
+    height: 260px;
+    background-color: white;
+    border-radius: 50% 50% 50% 30px;
+    box-shadow: inset 0 0 40px 30px #111;
+}
+
+.space-ship__left-engine--fan {
+    position: relative;
+    top: 75px;
+    left: 60px;
+    width: 140px;
+    height: 180px;
+    background-color: #111;
+    background: radial-gradient(
+        circle,
+        #333 0%,
+        #222 20%,
+        #000 30%,
+        #444 100%
+    );
+    border-radius: 160px 20px 30px 90px;
+    border-top: 8px solid #939393;
+    border-right: 15px solid #838383;
+    border-bottom: 8px solid #838383;
+    border-left: 8px solid #939393;
+    box-shadow: 20px 40px 10px -20px #222;
+}
+
+.space-ship__right-engine--fan {
+    position: relative;
+    top: 75px;
+    right: -37px;
+    width: 140px;
+    height: 180px;
+    background-color: #111;
+    background: radial-gradient(
+        circle,
+        #333 0%,
+        #222 20%,
+        #000 30%,
+        #444 100%
+    );
+    border-radius: 20px 160px 90px 30px;
+    border-top: 8px solid #939393;
+    border-right: 8px solid #939393;
+    border-bottom: 8px solid #838383;
+    border-left: 15px solid #838383;
+    box-shadow: -20px 40px 10px -20px #222;
+}
+
+.space-ship__body {
+    position: absolute;
+    top: -237px;
+    width: 400px;
+    height: 290px;
+    background-color: white;
+    box-shadow: inset 0 0 40px 30px #111;
+    border-radius: 300px 300px 90px 90px;
+}
+
+.space-ship__cock-pit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -200px;
+}
+
+.space-ship__cock-pit--background-one {
+    position: absolute;
+    height: 0;
+    width: 130px;
+    border-bottom: 75px solid white;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+}
+
+.space-ship__cock-pit--background-two {
+    position: absolute;
+    height: 0;
+    width: 120px;
+    border-bottom: 64px solid black;
+    border-left: 27px solid transparent;
+    border-right: 27px solid transparent;
+}
+
+.space-ship__cock-pit--seat-back {
+    position: absolute;
+    top: -68px;
+    height: 100px;
+    width: 110px;
+    background-color: #333;
+    border-radius: 60px 60px 0 0;
+    z-index: 1;
 }
 
 
