@@ -16,7 +16,7 @@ body {
     justify-content: center;
     height: 100vh;
     width: 100vw;
-} 
+}
 
 .sky__section-one {
     background: linear-gradient(to bottom, white, #56d0e3);
@@ -49,14 +49,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(
-        circle,
-        #fde06b 5%,
-        #ffcc00 10%,
-        #ffcc0091 20%,
-        transparent,
-        transparent
-    );
+    background: radial-gradient(circle,
+            #fde06b 5%,
+            #ffcc00 10%,
+            #ffcc0091 20%,
+            transparent,
+            transparent);
     z-index: 1;
 }
 
@@ -121,7 +119,7 @@ body {
     height: 30px;
     border-radius: 60% 20% 30% 60%;
     background-color: black;
-       
+
 }
 
 .bird-head {
@@ -188,25 +186,25 @@ body {
     top: 9px;
     left: 0;
     transform: rotate(5deg);
-    
+
 }
 
 .feather-five {
     top: 12px;
-    left: 0;   
+    left: 0;
 }
 
 .feather-six {
     top: 15px;
     left: 0;
-    transform: rotate(-5deg);   
+    transform: rotate(-5deg);
 }
 
 .feather-seven {
     top: 18px;
     left: 0;
     transform: rotate(-10deg);
-    
+
 }
 
 .feather-eight {
@@ -236,7 +234,7 @@ body {
     height: 30px;
     border-radius: 0 5px 0 0;
     background-color: black;
-    
+
 }
 
 .bird-wing__forearm {
@@ -267,7 +265,7 @@ body {
     height: 250vh;
     height: 50%;
     width: 100vw;
-    background: linear-gradient(to bottom, #ffd632, #6a5812 , #000 8%, #000 88%, rgba(255, 255, 255, 0.339));
+    background: linear-gradient(to bottom, #ffd632, #6a5812, #000 8%, #000 88%, rgba(255, 255, 255, 0.339));
     clip-path: ellipse(150% 100% at 50% 0%);
 }
 
@@ -282,13 +280,11 @@ body {
     left: 20px;
     width: 50vw;
     height: 50vh;
-    background: radial-gradient(
-        circle,
-        rgba(0, 0, 0, 0.9),
-        rgba(0, 0, 0, 0.6) 20%,
-        rgba(0, 0, 0, 0.3) 40%,
-        transparent 60%
-    );
+    background: radial-gradient(circle,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.6) 20%,
+            rgba(0, 0, 0, 0.3) 40%,
+            transparent 60%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -361,18 +357,16 @@ body {
     left: 15%;
     width: 100vw;
     height: 50vh;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(255, 255, 255, 0.1) 20%,
-        rgba(255, 255, 255, 0.2) 35%,
-        rgba(255, 255, 255, 0.4)50%,
-        rgba(255, 255, 255, 0.2) 65%,
-        rgba(255, 255, 255, 0.1) 80%,
-        transparent
-    );
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(255, 255, 255, 0.1) 20%,
+            rgba(255, 255, 255, 0.2) 35%,
+            rgba(255, 255, 255, 0.4)50%,
+            rgba(255, 255, 255, 0.2) 65%,
+            rgba(255, 255, 255, 0.1) 80%,
+            transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.9) 6%, black 8%, black 92%, rgba(0, 0, 0, 0.9) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
-    mask-image: linear-gradient(to right, transparent,  black 35%, black 65%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 35%, black 65%, transparent);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -385,19 +379,17 @@ body {
     left: 0;
     width: 80vw;
     height: 30vh;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(255, 255, 255, 0.1) 10%,
-        rgba(255, 255, 255, 0.3) 30%,
-        rgba(255, 255, 255, 0.4)50%,
-        rgba(255, 255, 255, 0.3) 70%,
-        rgba(255, 255, 255, 0.1) 90%,
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(255, 255, 255, 0.1) 10%,
+            rgba(255, 255, 255, 0.3) 30%,
+            rgba(255, 255, 255, 0.4)50%,
+            rgba(255, 255, 255, 0.3) 70%,
+            rgba(255, 255, 255, 0.1) 90%,
 
-        transparent
-    );
+            transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.9) 6%, black 8%, black 92%, rgba(0, 0, 0, 0.9) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
-    mask-image: linear-gradient(to right, transparent,  black 25%, black 55%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 25%, black 55%, transparent);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -407,7 +399,7 @@ body {
 .cloud-one__container {
     position: relative;
     top: 0;
-    left: 0; 
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -420,19 +412,17 @@ body {
     left: 25vw;
     width: 60vw;
     height: 10vh;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(255, 255, 255, 0.1) 10%,
-        rgba(255, 255, 255, 0.3) 30%,
-        rgba(255, 255, 255, 0.4)50%,
-        rgba(255, 255, 255, 0.3) 70%,
-        rgba(255, 255, 255, 0.1) 90%,
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(255, 255, 255, 0.1) 10%,
+            rgba(255, 255, 255, 0.3) 30%,
+            rgba(255, 255, 255, 0.4)50%,
+            rgba(255, 255, 255, 0.3) 70%,
+            rgba(255, 255, 255, 0.1) 90%,
 
-        transparent
-    );
+            transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.9) 6%, black 8%, black 92%, rgba(0, 0, 0, 0.9) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
-    mask-image: linear-gradient(to right, transparent,  black 25%, black 55%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 25%, black 55%, transparent);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -445,19 +435,17 @@ body {
     left: -21vw;
     width: 50vw;
     height: 12vh;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(255, 255, 255, 0.1) 10%,
-        rgba(255, 255, 255, 0.3) 30%,
-        rgba(255, 255, 255, 0.4)50%,
-        rgba(255, 255, 255, 0.3) 70%,
-        rgba(255, 255, 255, 0.1) 90%,
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(255, 255, 255, 0.1) 10%,
+            rgba(255, 255, 255, 0.3) 30%,
+            rgba(255, 255, 255, 0.4)50%,
+            rgba(255, 255, 255, 0.3) 70%,
+            rgba(255, 255, 255, 0.1) 90%,
 
-        transparent
-    );
+            transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.9) 6%, black 8%, black 92%, rgba(0, 0, 0, 0.9) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
-    mask-image: linear-gradient(to right, transparent,  black 25%, black 55%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 25%, black 55%, transparent);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -472,23 +460,21 @@ body {
     left: -5%;
     width: 100vw;
     height: 60vh;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(0, 255, 0, 0.1) 20%,
-        rgba(0, 255, 0, 0.2) 35%,
-        rgba(0, 255, 0, 0.3)50%,
-        rgba(0, 255, 0, 0.2) 65%,
-        rgba(0, 255, 0, 0.1) 80%,
-        transparent
-    );
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(0, 255, 0, 0.1) 20%,
+            rgba(0, 255, 0, 0.2) 35%,
+            rgba(0, 255, 0, 0.3)50%,
+            rgba(0, 255, 0, 0.2) 65%,
+            rgba(0, 255, 0, 0.1) 80%,
+            transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 2%, rgba(0, 0, 0, 0.9) 6%, black 8%, black 92%, rgba(0, 0, 0, 0.9) 94%, rgba(0, 0, 0, 0.4) 98%, transparent);
-    mask-image: linear-gradient(to right, transparent,  black 35%, black 65%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 35%, black 65%, transparent);
     z-index: 2000;
 }
 
 .star {
-    position: absolute; 
+    position: absolute;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     z-index: 2000;
@@ -502,19 +488,19 @@ body {
 
 .star-two {
     width: 1px;
-    height: 1px; 
+    height: 1px;
 }
 
 .star-three {
     width: 1px;
-    height: 1px; 
+    height: 1px;
     background-color: white;
 }
 
 .star-four {
     width: 1px;
     height: 1px;
-    box-shadow: 0 0 5px 1px white; 
+    box-shadow: 0 0 5px 1px white;
 }
 
 .star-five {
@@ -527,14 +513,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
     width: 100vw;
+    height: 700px;
     position: relative;
-    top: -60vh;
+    top: 50%;
     z-index: 3000;
 }
 
 .space-ship__base {
     position: absolute;
+    bottom: 170px;
     width: 600px;
     height: 100px;
     background-color: white;
@@ -544,133 +533,211 @@ body {
 
 .space-ship__bottom {
     position: absolute;
-    bottom: -90px;
-    width: 300px;
+    bottom: 90px;
+    width: 215px;
     height: 100px;
     background-color: white;
     box-shadow: inset 0 0 40px 30px #111;
     border-radius: 0 0 60px 60px;
 }
 
+.engine-container {
+    position: absolute;
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .space-ship__left-engine {
-    position: absolute;
-    top: -270px;
-    left: 80px;
-    width: 260px;
-    height: 260px;
-    background-color: white;
-    background: linear-gradient(
-        45deg,
-        #111 0%,
-        #222 20%,
-        white 50%,
-        #222 80%,
-        #111 100%
-        );
-    border-radius: 50% 50% 30px 50%; 
-}
-
-.space-ship__middle-engine {
-    position: absolute;
-    top: -410px;
-    left: 306px;
-    width: 260px;
-    height: 200px;
-    background-color: white;
-    background: linear-gradient(
-        to bottom,
-        white 0%,
-        #222 90%,
-        #111 100%
-    );
-    border-radius: 240px 240px 60px 60px;
-    /* box-shadow: inset 0 0 40px 30px #111; */
-}
-
-.space-ship__middle-engine--fan {
     position: relative;
-    top: 50px;
-    left: 32px;
-    width: 180px;
-    height: 120px;
-    background-color: #111;
-    background: radial-gradient(
-        circle,
-        #333 0%,
-        #222 20%,
-        #000 30%,
-        #444 100%
-    );
-    border-radius: 120px 120px 30px 30px;
-    border-top: 8px solid #939393;
-    border-right: 8px solid #939393;
-    border-bottom: 8px solid #838383;
-    border-left: 8px solid #939393;
-    box-shadow: 20px 40px 10px -20px #222;
-}
-
-.space-ship__right-engine {
-    position: absolute;
-    top: -270px;
-    right: 80px;
-    width: 260px;
+    bottom: -15px;
+    left: 40px;
+    min-width: 260px;
     height: 260px;
     background-color: white;
-    border-radius: 50% 50% 50% 30px;
-    box-shadow: inset 0 0 40px 30px #111;
+    background: linear-gradient(45deg,
+            #000 0%,
+            #222 20%,
+            white 40%,
+            #111 83%,
+            #000 100%);
+    border-radius: 50% 50% 30px 50%;
+}
+
+.space-ship__left-engine--fan-bg {
+    position: absolute;
+    left: 73px;
+    top: 70px;
+    width: 160px;
+    height: 190px;
+    background-color: #888;
+    background: linear-gradient(45deg,
+            #222 0%,
+            #555 20%,
+            #AAA 40%,
+            #555 80%,
+            #444 100%);
+    border-radius: 160px 20px 30px 90px;
+    box-shadow: 20px 40px 10px -20px #222;
 }
 
 .space-ship__left-engine--fan {
-    position: relative;
-    top: 75px;
-    left: 60px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
     width: 140px;
     height: 180px;
     background-color: #111;
-    background: radial-gradient(
-        circle,
-        #333 0%,
-        #222 20%,
-        #000 30%,
-        #444 100%
-    );
+    background: radial-gradient(circle,
+            #333 0%,
+            #222 20%,
+            #000 30%,
+            #444 100%);
     border-radius: 160px 20px 30px 90px;
-    border-top: 8px solid #939393;
-    border-right: 15px solid #838383;
-    border-bottom: 8px solid #838383;
-    border-left: 8px solid #939393;
-    box-shadow: 20px 40px 10px -20px #222;
+    /* box-shadow: 20px 40px 10px -20px #222; */
+}
+
+.middle-engine__container {
+    position: relative;
+    top: -140px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space-ship__middle-engine--left {
+    position: relative;
+    width: 130px;
+    height: 160px;
+    background-color: white;
+    background: linear-gradient(to bottom,
+            white 0%,
+            #222 90%,
+            #111 100%);
+    background: linear-gradient(45deg,
+            #000 0%,
+            #222 20%,
+            white 40%,
+            #777 80%,
+            #999 100%);
+    border-radius: 120px 0 0 40px;
+    /* clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);    box-shadow: inset 0 0 40px 30px #111; */
+}
+
+.space-ship__middle-engine--right {
+    position: relative;
+    width: 130px;
+    height: 160px;
+    background-color: white;
+    background: linear-gradient(to bottom,
+            white 0%,
+            #222 90%,
+            #111 100%);
+    background: linear-gradient(-45deg,
+            #000 0%,
+            #222 20%,
+            white 40%,
+            #777 80%,
+            #999 100%);
+    border-radius: 0 120px 40px 0;
+}
+
+.space-ship__middle-engine--fan-bg {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 130px;
+    background-color: #111;
+    background: linear-gradient(to bottom,
+            #999,
+            #444 100%);
+    border-radius: 225px 225px 55px 55px;
+    box-shadow: 0 75px 40px 0 #222;
+    /* clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%); */
+}
+
+.space-ship__middle-engine--fan {
+    width: 180px;
+    height: 95%;
+    width: 95%;
+    background-color: #111;
+    background: radial-gradient(circle,
+            #333 0%,
+            #222 20%,
+            #000 30%,
+            #444 100%);
+    border-radius: 120px 120px 25px 25px;
+    /* box-shadow: 20px 40px 10px -20px #222; */
+    /* clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%); */
+}
+
+.space-ship__right-engine {
+    position: relative;
+    bottom: -15px;
+    right: 40px;
+    min-width: 260px;
+    height: 260px;
+    background-color: white;
+    background: linear-gradient(-45deg,
+            #000 0%,
+            #222 20%,
+            white 40%,
+            #111 83%,
+            #000 100%);
+    border-radius: 50% 50% 50% 30px;
+    /* box-shadow: inset 0 0 40px 30px #111; */
+}
+
+.space-ship__right-engine--fan-bg {
+    position: absolute;
+    right: 73px;
+    top: 70px;
+    width: 160px;
+    height: 190px;
+    background-color: #888;
+    background: linear-gradient(-45deg,
+            #222 0%,
+            #555 20%,
+            #AAA 40%,
+            #555 80%,
+            #444 100%);
+    border-radius: 20px 160px 90px 30px;
+    box-shadow: -20px 40px 10px -20px #222;
 }
 
 .space-ship__right-engine--fan {
-    position: relative;
-    top: 75px;
-    right: -37px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
     width: 140px;
     height: 180px;
     background-color: #111;
-    background: radial-gradient(
-        circle,
-        #333 0%,
-        #222 20%,
-        #000 30%,
-        #444 100%
-    );
+    background: radial-gradient(circle,
+            #333 0%,
+            #222 20%,
+            #000 30%,
+            #444 100%);
     border-radius: 20px 160px 90px 30px;
-    border-top: 8px solid #939393;
-    border-right: 8px solid #939393;
-    border-bottom: 8px solid #838383;
-    border-left: 15px solid #838383;
-    box-shadow: -20px 40px 10px -20px #222;
+    /* box-shadow: -20px 40px 10px -20px #222; */
 }
 
 .space-ship__body {
     position: absolute;
-    top: -237px;
-    width: 400px;
-    height: 290px;
-    background-color: white;
-    box-shadow: inset 0 0 40px 30px #111;
+    bottom: 155px;
+    width: 360px;
+    height: 265px;
+    /* background-color: rgb(220, 220, 220);
+    box-shadow: inset 0 0 40px 30px #444; */
+    background: linear-gradient(to right,
+    
+            #222 0%,
+            white 23%,
+            white 77%,
+            #222 100%);
     border-radius: 300px 300px 90px 90px;
 }
 
@@ -679,20 +746,23 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -200px;
+    bottom: 450px;
 }
 
 .space-ship__cock-pit--background-one {
     position: absolute;
+    top: 45px;
     height: 0;
     width: 130px;
-    border-bottom: 75px solid rgb(181, 181, 181);
+    border-bottom: 75px solid #777;
     border-left: 35px solid transparent;
     border-right: 35px solid transparent;
 }
 
 .space-ship__cock-pit--background-two {
     position: absolute;
+    top: 5px;
+    left: -22px;
     height: 0;
     width: 120px;
     border-bottom: 64px solid black;
@@ -702,12 +772,178 @@ body {
 
 .space-ship__cock-pit--seat-back {
     position: absolute;
-    top: -68px;
-    height: 100px;
+    top: 34px;
+    height: 80px;
     width: 110px;
     background-color: #333;
-    border-radius: 60px 60px 0 0;
-    z-index: 1;
+    background: repeating-linear-gradient(to right, 
+    #000 0px, #222 4px, #000 8px);
+    border-radius: 30px 30px 0 0;
+}
+
+.seat-rail__left {
+    position: absolute;
+    top: -18px;
+    left: -35px;
+    background-color: transparent;
+    border: 5px solid #333;
+    border-radius: 30%;
+    width: 20px;
+    height: 80px;
+}
+
+.seat-rail__right {
+    position: absolute;
+    top: -18px;
+    right: -35px;
+    background-color: transparent;
+    border: 5px solid #333;
+    border-radius: 30%;
+    width: 20px;
+    height: 80px;
+}
+
+.head-rest {
+    position: absolute;
+    top: 5px;
+    height: 30px;
+    width: 80px;
+    background: linear-gradient(to right, #444, #222, #000, #222, #444);
+    border-radius: 5px;
+}
+
+.windshield {
+    position: absolute;
+    top: -65px;
+    width: 220px;
+    height: 190px;
+    background-color: #99999978;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    border-radius: 115px 115px 0 0;
+    border: 3px solid #777;
+    /* box-shadow: 0 0 0px 5px #777; */
+}
+
+.controls__container {
+    position: absolute;
+    bottom: 319px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-controls {
+    width: 80px;
+    height: 35px;
+    background-color: green;
+    background: linear-gradient(50deg,
+            #333 0%,
+            #555 5%,
+            white 20%,
+            white 40%,
+            #9f251c 41%,
+            #6a1812 100%
+   );
+    border-top-left-radius: 15px;
+}
+
+.right-controls {
+    width: 80px;
+    height: 35px;
+    background-color: green;
+    background: linear-gradient(-50deg,
+            #333 0%,
+            #555 5%,
+            white 20%,
+            white 40%,
+            #9f251c 41%,
+            #6a1812 100%
+   );
+    border-top-right-radius: 15px;
+}
+
+.spaceship__nose-container {
+    position: relative;
+    bottom: -126px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spaceship__nose-one {
+    width: 175px;
+    height: 190px;
+    background-color: #999;
+    background: linear-gradient(50deg,
+            #000 0%,
+            #222 20%,
+            white 70%,
+            white 89%,
+            #9f251c 90%,
+            #6a1812 100%
+            
+            );
+    border-radius: 85px;
+    border-radius: 75% 75% 50% 50%;
+    border-radius: 115px 0 0 85px;
+}
+
+.spaceship__nose-two {
+    width: 175px;
+    height: 190px;
+    background-color: #999;
+    background: linear-gradient(-50deg,
+            #000 0%,
+            #222 20%,
+            white 70%,
+            white 89%,
+            #9f251c 90%,
+            #6a1812 100%
+            
+            );
+    border-radius: 85px;
+    border-radius: 75% 75% 50% 50%;
+    border-radius: 0 115px 85px 0;
+}
+
+.front-vent__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom:  157px;
+    height: 90px;
+    width: 120px;
+    background-color: #6a1812;
+    background-color: green;
+    background: linear-gradient(to bottom, #9f251c, #1d0605);
+    border-radius: 60px 60px 20px 20px;
+    box-shadow: 0px 25px 40px 15px #555555b2;
+}
+
+.front-vent__border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 110px;
+    background-color: #52120e;
+    background: linear-gradient(to bottom,  #6f1a13, #360c09);
+    border-radius: 55px 55px 15px 15px;
+}
+
+.front-vent__vent {
+    height: 60px;
+    width: 90px;
+    background-color: black;
+    background: repeating-linear-gradient( to bottom,
+    #000 0px,
+    #444 5px
+    );
+    border-radius: 45px 45px 5px 5px;
+    box-shadow: inset 0px 0px 10px 5px #000;
 }
 
 
