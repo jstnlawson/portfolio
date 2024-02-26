@@ -733,9 +733,10 @@ body {
     /* background-color: rgb(220, 220, 220);
     box-shadow: inset 0 0 40px 30px #444; */
     background: linear-gradient(to right,
-    
+
             #222 0%,
             white 23%,
+            #000 54%,
             white 77%,
             #222 100%);
     border-radius: 300px 300px 90px 90px;
@@ -776,8 +777,8 @@ body {
     height: 80px;
     width: 110px;
     background-color: #333;
-    background: repeating-linear-gradient(to right, 
-    #000 0px, #222 4px, #000 8px);
+    background: repeating-linear-gradient(to right,
+            #000 0px, #222 4px, #000 8px);
     border-radius: 30px 30px 0 0;
 }
 
@@ -838,14 +839,17 @@ body {
     height: 35px;
     background-color: green;
     background: linear-gradient(50deg,
-            #333 0%,
-            #555 5%,
+            #555 0%,
+            #777 5%,
             white 20%,
             white 40%,
             #9f251c 41%,
-            #6a1812 100%
-   );
+            #6a1812 100%);
     border-top-left-radius: 15px;
+    border: 1px solid #777;
+    border-bottom: none;
+    border-right: none;
+
 }
 
 .right-controls {
@@ -853,19 +857,21 @@ body {
     height: 35px;
     background-color: green;
     background: linear-gradient(-50deg,
-            #333 0%,
-            #555 5%,
+            #555 0%,
+            #777 5%,
             white 20%,
             white 40%,
             #9f251c 41%,
-            #6a1812 100%
-   );
+            #6a1812 100%);
     border-top-right-radius: 15px;
+    border: 1px solid #777;
+    border-bottom: none;
+    border-left: none;
 }
 
 .spaceship__nose-container {
-    position: relative;
-    bottom: -126px;
+    position: absolute;
+    bottom: 129px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -880,11 +886,13 @@ body {
             #000 0%,
             #222 20%,
             white 70%,
+            #aaa 78%,
+            #999 79%,
+            #aaa 80%,
+            white 83%,
             white 89%,
             #9f251c 90%,
-            #6a1812 100%
-            
-            );
+            #6a1812 100%);
     border-radius: 85px;
     border-radius: 75% 75% 50% 50%;
     border-radius: 115px 0 0 85px;
@@ -898,11 +906,13 @@ body {
             #000 0%,
             #222 20%,
             white 70%,
+            #aaa 78%,
+            #999 79%,
+            #aaa 80%,
+            white 83%,
             white 89%,
             #9f251c 90%,
-            #6a1812 100%
-            
-            );
+            #6a1812 100%);
     border-radius: 85px;
     border-radius: 75% 75% 50% 50%;
     border-radius: 0 115px 85px 0;
@@ -913,7 +923,7 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom:  157px;
+    bottom: 145px;
     height: 90px;
     width: 120px;
     background-color: #6a1812;
@@ -930,7 +940,7 @@ body {
     height: 80px;
     width: 110px;
     background-color: #52120e;
-    background: linear-gradient(to bottom,  #6f1a13, #360c09);
+    background: linear-gradient(to bottom, #6f1a13, #360c09);
     border-radius: 55px 55px 15px 15px;
 }
 
@@ -938,12 +948,157 @@ body {
     height: 60px;
     width: 90px;
     background-color: black;
-    background: repeating-linear-gradient( to bottom,
-    #000 0px,
-    #444 5px
-    );
+    background: repeating-linear-gradient(to bottom,
+            #000 0px,
+            #444 5px);
     border-radius: 45px 45px 5px 5px;
     box-shadow: inset 0px 0px 10px 5px #000;
 }
 
+.left-wing-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.left-wing__connector {
+    position: absolute;
+    bottom: -126px;
+    left: -313px;
+    width: 40px;
+    height: 40px;
+    background-color: #999;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            transparent 27%,
+            #6c6c6c 28%,
+            #6c6c6c 33%,
+            #5d5d5d 34%,
+            #5d5d5d 66%,
+            #505050 67%);
+    transform: skew(33deg);
+}
+
+.left-wing {
+    position: absolute;
+    bottom: -126px;
+    left: -513px;
+    width: 400px;
+    height: 40px;
+    background-color: #999;
+    background: linear-gradient(to bottom,
+            #fff 0%,
+            #fff 33%,
+            #ddd 34%,
+            #ddd 66%,
+            #bbb 67%);
+    border-radius: 30% 26% 0 30%;
+    transform: rotate(-33deg) translateX(-50%);
+}
+
+.left-wing__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to right,
+            #00000028,
+            #00000095);
+    border-radius: 30% 26% 0 30%;
+}
+
+.left-wing__stripe-one {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    height: 20px;
+    width: 80px;
+    transform: skew(-45deg, 0deg);
+    background-color: #851a12d2;
+}
+
+.left-wing__stripe-two {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    height: 20px;
+    width: 80px;
+    transform: skew(45deg, 0deg);
+    background-color: #6a1812d2;
+}
+
+.right-wing-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-wing__connector {
+    position: absolute;
+    bottom: -126px;
+    right: -312px;
+    width: 40px;
+    height: 40px;
+    background-color: #999;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            transparent 27%,
+            #6c6c6c 28%,
+            #6c6c6c 33%,
+            #5d5d5d 34%,
+            #5d5d5d 66%,
+            #505050 67%);
+    transform: skew(-33deg);
+}
+
+.right-wing {
+    position: absolute;
+    bottom: -126px;
+    right: -512px;
+    width: 400px;
+    height: 40px;
+    background-color: #999;
+    background: linear-gradient(to bottom,
+            #fff 0%,
+            #fff 33%,
+            #ddd 34%,
+            #ddd 66%,
+            #bbb 67%);
+    border-radius: 26% 30% 30% 0;
+    transform: rotate(33deg) translateX(50%);
+}
+
+.right-wing__overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to left,
+            #00000028,
+            #00000095);
+    border-radius: 26% 30% 30% 0;
+}
+
+.right-wing__stripe-one {
+    position: absolute;
+    top: 0;
+    right: 60px;
+    height: 20px;
+    width: 80px;
+    transform: skew(45deg, 0deg);
+    background-color: #851a12d2;
+}
+
+.right-wing__stripe-two {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    height: 20px;
+    width: 80px;
+    transform: skew(-45deg, 0deg);
+    background-color: #6a1812d2;
+}
