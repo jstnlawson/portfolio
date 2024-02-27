@@ -74,9 +74,20 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollInProgress = true;
   };
 
-  // Initial call in case they're already in view
-  // handleScroll();
+ const spaceShipAnimation = () => {
+  const spaceShip = document.querySelector(".space-ship");
+  const observer = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        spaceShip.style.transform = "scale(1)";
+        observer.unobserve(entry.target);
+      }
+    });
+ }, { threshold: 0.5 });
+  observer.observe(spaceShip);
+};
 
   // Attach the scroll event listener
   window.addEventListener("scroll", handleScroll);
+  spaceShipAnimation();
 });

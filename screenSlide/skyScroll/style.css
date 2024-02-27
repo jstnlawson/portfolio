@@ -1,5 +1,6 @@
 body {
     background-color: #000000;
+
 }
 
 .sky-scroll {
@@ -514,17 +515,37 @@ body {
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+    /* overflow: hidden; */
+    /* width: 100vw; */
     height: 700px;
     position: relative;
     top: 50%;
-    z-index: 3000;
+    z-index: 5000;
+    transform: scale(0);
+    transition: transform 5s ease;
+}
+
+.fire-glow {
+    position: absolute;
+    top: -100px;
+    left: -120px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle,
+            #fff2007c 20%,
+            #ffae008c 30%,
+            transparent,
+            transparent);
+    z-index: -1;
 }
 
 .space-ship__base {
     position: absolute;
-    bottom: 170px;
-    width: 600px;
+    bottom: -53px;
+    left: 140px;
+    width: 500px;
     height: 100px;
     background-color: white;
     box-shadow: inset 0 0 40px 30px #111;
@@ -545,7 +566,7 @@ body {
     position: absolute;
     /* width: 100%; */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -725,6 +746,83 @@ body {
     /* box-shadow: -20px 40px 10px -20px #222; */
 }
 
+.top-wing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    top: -72px;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the item within the container */
+
+}
+
+.top-wing__top {
+    height: 25px;
+    width: 18px;
+    background-color: #6a1812;
+    background: linear-gradient(to right,
+    #ffb57c,
+    #9f251c,
+    #6a1812,
+    #9f251c,
+    #ffb57c);
+}
+
+.top-wing__mid-one {
+    height: 25px;
+    width: 15px;
+    background-color: #ccc;
+    background: linear-gradient(to right,
+    white,
+    #aaa,
+    #aaa,
+    white
+    );
+}
+
+.top-wing__mid-two {
+    height: 28px;
+    width: 18px;
+    background-color: #ccc;
+    background: linear-gradient(to right,
+    white,
+    #999,
+    #999,
+    white
+    );
+}
+
+.top-wing__mid-three {
+    height: 32px;
+    width: 21px;
+    background-color: #ccc;
+    background: linear-gradient(to right,
+    white,
+    #888,
+    #888,
+    white
+    );
+}
+
+.top-wing__base {
+    height: 43px;
+    width: 43px;
+    background-color: #ccc;
+    background: linear-gradient(to right,
+    white,
+    #888,
+    #666,
+    #888,
+    white
+    );
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
 .space-ship__body {
     position: absolute;
     bottom: 155px;
@@ -735,10 +833,13 @@ body {
     background: linear-gradient(to right,
 
             #222 0%,
+            #ccc 12%,
             white 23%,
             #000 54%,
             white 77%,
-            #222 100%);
+            #ccc 88%,
+            #222 100%
+        );
     border-radius: 300px 300px 90px 90px;
 }
 
@@ -813,21 +914,77 @@ body {
     border-radius: 5px;
 }
 
-.windshield {
+.windshield-back {
     position: absolute;
     top: -65px;
-    width: 220px;
-    height: 190px;
+    width: 180px;
+    height: 150px;
     background-color: #99999978;
     clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
     border-radius: 115px 115px 0 0;
-    border: 3px solid #777;
+}
+
+.windshield {
+    position: absolute;
+    top: -50px;
+    width: 250px;
+    height: 200px;
+    background-color: #99999978;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    border-radius: 115px 115px 0 0;
+    /* border: 3px solid #777; */
     /* box-shadow: 0 0 0px 5px #777; */
 }
 
+.controls-front {
+    position: absolute;
+    bottom: 300px;
+    width: 160px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.front-left {
+    position: absolute;
+    bottom: 7px;
+    left: 0;
+    width: 80px;
+    height: 15px;
+    background-color: green;
+    background: linear-gradient(65deg,
+            white 0%,
+            white 5%,
+            #999 5%,
+            white 28%,
+            white 53%,
+            #9f251c 53%,
+            #6a1812 100%);
+    
+}
+
+.front-right {
+    position: absolute;
+    bottom: 7px;
+    right: 0;
+    width: 80px;
+    height: 15px;
+    background-color: green;
+    background: linear-gradient(-65deg,
+            white 0%,
+            white 5%,
+            #999 5%,
+            white 28%,
+            white 53%,
+            #9f251c 53%,
+            #6a1812 100%);
+}
+
+
 .controls__container {
     position: absolute;
-    bottom: 319px;
+    bottom: 316px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -839,16 +996,14 @@ body {
     height: 35px;
     background-color: green;
     background: linear-gradient(50deg,
-            #555 0%,
-            #777 5%,
+            #777 0%,
+            #999 5%,
             white 20%,
             white 40%,
             #9f251c 41%,
             #6a1812 100%);
     border-top-left-radius: 15px;
-    border: 1px solid #777;
-    border-bottom: none;
-    border-right: none;
+    border-top: 1px solid #777;
 
 }
 
@@ -857,16 +1012,46 @@ body {
     height: 35px;
     background-color: green;
     background: linear-gradient(-50deg,
-            #555 0%,
-            #777 5%,
+            #777 0%,
+            #999 5%,
             white 20%,
             white 40%,
             #9f251c 41%,
             #6a1812 100%);
     border-top-right-radius: 15px;
-    border: 1px solid #777;
-    border-bottom: none;
-    border-left: none;
+    border-top: 1px solid #777;
+}
+
+.hood-paint--left {
+    position: absolute;
+    bottom: 287px;
+    left: 387px;
+    width: 40px;
+    height: 20px;
+    background-color: #6a1812c7;
+    background: linear-gradient(80deg,
+    white 0%,
+    white 17%,
+    
+    #9f251c 18%,
+    #6a1812 
+    );
+}
+
+.hood-paint--right {
+    position: absolute;
+    bottom: 287px;
+    right: 387px;
+    width: 40px;
+    height: 20px;
+    background-color: #6a1812c7;
+    background: linear-gradient(-80deg,
+    white 0%,
+    white 17%,
+    #9f251c 18%,
+    #6a1812 
+    
+    );
 }
 
 .spaceship__nose-container {
@@ -882,17 +1067,19 @@ body {
     width: 175px;
     height: 190px;
     background-color: #999;
-    background: linear-gradient(50deg,
+    background: linear-gradient(60deg,
             #000 0%,
             #222 20%,
-            white 70%,
-            #aaa 78%,
+            white 64%,
+            #ddd
+            /* #aaa 78%,
             #999 79%,
             #aaa 80%,
             white 83%,
             white 89%,
             #9f251c 90%,
-            #6a1812 100%);
+            #6a1812 100% */
+            );
     border-radius: 85px;
     border-radius: 75% 75% 50% 50%;
     border-radius: 115px 0 0 85px;
@@ -902,17 +1089,19 @@ body {
     width: 175px;
     height: 190px;
     background-color: #999;
-    background: linear-gradient(-50deg,
+    background: linear-gradient(-60deg,
             #000 0%,
             #222 20%,
-            white 70%,
-            #aaa 78%,
+            white 64%,
+            #ddd
+            /* #aaa 78%,
             #999 79%,
             #aaa 80%,
             white 83%,
             white 89%,
             #9f251c 90%,
-            #6a1812 100%);
+            #6a1812 100% */
+            );
     border-radius: 85px;
     border-radius: 75% 75% 50% 50%;
     border-radius: 0 115px 85px 0;
@@ -1101,4 +1290,57 @@ body {
     width: 80px;
     transform: skew(-45deg, 0deg);
     background-color: #6a1812d2;
+}
+
+.gun-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gun {
+ display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(to bottom,
+            #bbb,
+            #999,
+            #666); 
+}
+
+.gun-one {
+    top: 116px;
+    left: -316px;  
+}
+
+.gun-two {
+    top: 116px;
+    right: -316px;  
+}
+
+.gun__barrel {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            #000 5px,
+            #111 6px,
+            #222 7px,
+            #777 8px,
+            #666 11px,
+            #222 12px,
+            #666 13px,
+            #555 16px,
+            #222 17px,
+            #555 18px,
+            #444 21px,
+            #222 22px,
+            #666 23px,
+            #444 26px,
+            #000 30px);
 }
