@@ -1,7 +1,54 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("screenSlide/skyScroll/script.js");
 
+  // Smooth scroll function to customize speed and easing
+function smoothScrollTo(targetY, duration) {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  let startTime = null;
+
+  function scrollAnimation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const nextY = easeFunction(timeElapsed, startY, distance, duration);
+
+    window.scrollTo(0, nextY);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(scrollAnimation);
+    } else {
+      window.scrollTo(0, targetY);
+    }
+  }
+
+  requestAnimationFrame(scrollAnimation);
+}
+
+// Ease function - can be adjusted to change scroll behavior
+function easeFunction(t, b, c, d) {
+  t /= d/2;
+  if (t < 1) return c/2*t*t + b;
+  t--;
+  return -c/2 * (t*(t-2) - 1) + b;
+}
+
+  const storyOne = document.querySelector(".sky__section-one");
+  const storyOneBtn = document.querySelector(".story__part-one--btn");
+  const storyTwo = document.querySelector(".sky__section-three");
+  const storyTwoBtn = document.querySelector(".story__part-two--btn");
+
+  storyOneBtn.addEventListener("click", () => {
+    smoothScrollTo(storyTwo.offsetTop, 2500);
+  });
+
+  storyTwoBtn.addEventListener("click", () => {
+    smoothScrollTo(storyOne.offsetTop, 2500);
+  });
+
+
+
   function createStars() {
+
     const space = document.querySelector(".space");
 
     // Function to create a star
@@ -74,12 +121,22 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollInProgress = true;
   };
 
+ 
+
  const spaceShipAnimation = () => {
   const spaceShip = document.querySelector(".space-ship");
   const observer = new IntersectionObserver(function(entries, observer) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        spaceShip.style.transform = "scale(1)";
+        spaceShip.style.transform = "scale(0)";
+        spaceShip.style.transition = "transform 0s";
+        setTimeout(() => {
+        
+        spaceShip.style.transition = "transform 10s ease";
+        spaceShip.style.transform = "scale(0.8)";
+        spaceShip.classList.remove("hidden-ship");
+
+      }, 100);
         observer.unobserve(entry.target);
       }
     });
