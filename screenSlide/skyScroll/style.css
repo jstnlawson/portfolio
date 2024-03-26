@@ -293,6 +293,9 @@ p {
 }
 
 .space-sky {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 450vh;
     background: linear-gradient(to bottom, #000 10%, rgba(51, 58, 255, 0.3), rgba(255, 65, 188, 0.375), rgba(51, 102, 255, 0.3), rgba(105, 2, 152, 0.3) 50%, #000 60%, #000 80%);
 }
@@ -543,7 +546,9 @@ p {
     /* width: 100vw; */
     height: 700px;
     position: relative;
+    position: absolute;
     top: 80%;
+    top: 120%;
     z-index: 5000;
     transform: scale(0.8);
     transition: transform 10s ease;
@@ -1015,8 +1020,8 @@ p {
 
 
 .controls__container {
-    position: absolute;
-    bottom: 316px;
+    position: relative;
+    bottom: -16px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1089,14 +1094,14 @@ p {
 .spaceship__nose-container {
     position: absolute;
     bottom: 129px;
-    width: 100%;
+    width: 355px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .spaceship__nose-one {
-    width: 175px;
+    width: 50%;
     height: 190px;
     background-color: #999;
     background: linear-gradient(60deg,
@@ -1118,7 +1123,7 @@ p {
 }
 
 .spaceship__nose-two {
-    width: 175px;
+    width: 50%;
     height: 190px;
     background-color: #999;
     background: linear-gradient(-60deg,
@@ -1409,11 +1414,8 @@ p {
     border: 1px solid #777;
     cursor: pointer;
     color: #333;
-    color: #006857;
     background: radial-gradient(circle, #c9c9ac 0%,  #f5f5e4 100%);
     background: linear-gradient(to bottom, #fff ,  #d3d3d3) ;
-    /* background: radial-gradient(circle, #cbcbcb , #f2f2f2 ,  #ffffff ); */
-
     height: 70px;
     width: 70px;
     font-size: 2rem;
@@ -1431,13 +1433,16 @@ p {
     color: #222;
     background: radial-gradient(circle, black 0%, rgb(43, 42, 42) 100%);
     background: radial-gradient(circle, #babaa3 0%,  #e6e6c8 100%);
+    background: linear-gradient(to bottom, #fff ,  #bdbdbd) ;
   }
   
   .btn:not(.disabled-btn):active {
-    transform: scale(.98);
+    /* transform: scale(.98); */
+    font-size: 1.9rem;
     color: #111;
     background: radial-gradient(circle,  black 0%, rgb(43, 42, 42) 100%);
     background: radial-gradient(circle, #92927b 0%,  #d4d4b5 100%);
+    background: linear-gradient(to bottom, #fff ,  #a3a3a3) ;
     box-shadow:
         inset 0 0 4px #e2e2c4,
         inset 1px 1px 1px transparent,
@@ -1466,6 +1471,10 @@ p {
   }
 
   .story__part-one--btn {
+    width: 11vw;
+    height: 11vw;
+    min-width: 70px;
+    min-height: 70px;
     color: #444;
     font-size: 1rem;
     background: transparent;
@@ -1475,7 +1484,7 @@ p {
       inset 0px 0px 0px 1px  transparent,
       inset 1px 1px 0px transparent,
       0px 3px 1px #00000070;
-      animation: fadeIn 10s ease-out;
+      animation: fadeIn 7s ease-out;
   }
 
     .btn.story__part-one--btn:hover {
@@ -1495,4 +1504,10 @@ p {
         inset 0px 0px 0px 1px  transparent,
         inset 1px 1px 0px transparent,
         0px 0px 1px #00000070;
+    }
+
+    .story__part-four {
+        position: relative;
+        top: 0;
+        left: 0;
     }

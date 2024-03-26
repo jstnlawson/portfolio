@@ -2,53 +2,99 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("screenSlide/skyScroll/script.js");
 
   // Smooth scroll function to customize speed and easing
-function smoothScrollTo(targetY, duration) {
-  const startY = window.scrollY;
-  const distance = targetY - startY;
-  let startTime = null;
+  function smoothScrollTo(targetY, duration) {
+    const startY = window.scrollY;
+    const distance = targetY - startY;
+    let startTime = null;
 
-  function scrollAnimation(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const nextY = easeFunction(timeElapsed, startY, distance, duration);
+    function scrollAnimation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const nextY = easeFunction(timeElapsed, startY, distance, duration);
 
-    window.scrollTo(0, nextY);
+      window.scrollTo(0, nextY);
 
-    if (timeElapsed < duration) {
-      requestAnimationFrame(scrollAnimation);
-    } else {
-      window.scrollTo(0, targetY);
+      if (timeElapsed < duration) {
+        requestAnimationFrame(scrollAnimation);
+      } else {
+        window.scrollTo(0, targetY);
+      }
     }
+
+    requestAnimationFrame(scrollAnimation);
   }
 
-  requestAnimationFrame(scrollAnimation);
-}
-
-// Ease function - can be adjusted to change scroll behavior
-function easeFunction(t, b, c, d) {
-  t /= d/2;
-  if (t < 1) return c/2*t*t + b;
-  t--;
-  return -c/2 * (t*(t-2) - 1) + b;
-}
+  // Ease function - can be adjusted to change scroll behavior
+  function easeFunction(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  }
 
   const storyOne = document.querySelector(".sky__section-one");
   const storyOneBtn = document.querySelector(".story__part-one--btn");
   const storyTwo = document.querySelector(".sky__section-three");
   const storyTwoBtn = document.querySelector(".story__part-two--btn");
+  const storyThree = document.querySelector(".sky__section-five");
+  const storyThreeBtn = document.querySelector(".story__part-three--btn");
+  const storyFour = document.querySelector(".story__part-four");
+  const storyFourBtn = document.querySelector(".story__part-four--btn");
 
   storyOneBtn.addEventListener("click", () => {
     smoothScrollTo(storyTwo.offsetTop, 2500);
   });
 
   storyTwoBtn.addEventListener("click", () => {
-    smoothScrollTo(storyOne.offsetTop, 2500);
+    smoothScrollTo(storyThree.offsetTop, 3500);
   });
 
+  function getCumulativeOffset(element) {
+    let top = 0;
+    do {
+      top += element.offsetTop || 0;
+      element = element.offsetParent;
+    } while (element);
 
+    return top;
+  }
+
+  function smoothScrollToCenter(element, duration) {
+    const viewportHeight = window.innerHeight;
+    const elementHeight = element.offsetHeight;
+    const elementOffsetTop = getCumulativeOffset(element);
+
+    // Calculate the extra space above and below the element when it's centered
+    const extraSpace = (viewportHeight - elementHeight) / 2;
+
+    // Calculate the target scroll position to center the element
+    let targetY = elementOffsetTop - extraSpace;
+
+    // If the element is taller than the viewport, adjust targetY so we don't scroll too far
+    if (elementHeight > viewportHeight) {
+      targetY = elementOffsetTop;
+    } else {
+      // Ensure we don't scroll to a negative offset
+      targetY = Math.max(targetY, 0);
+    }
+
+    // Smooth scroll to the adjusted target position
+    smoothScrollTo(targetY, duration);
+  }
+
+  storyThreeBtn.addEventListener("click", () => {
+    smoothScrollToCenter(storyFour, 8500);
+  });
+
+  storyFourBtn.addEventListener("click", () => {
+    const documentHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+    smoothScrollTo(documentHeight, 6500); // Adjust the duration as needed
+  });
 
   function createStars() {
-
     const space = document.querySelector(".space");
 
     // Function to create a star
@@ -121,28 +167,27 @@ function easeFunction(t, b, c, d) {
     scrollInProgress = true;
   };
 
- 
-
- const spaceShipAnimation = () => {
-  const spaceShip = document.querySelector(".space-ship");
-  const observer = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        spaceShip.style.transform = "scale(0)";
-        spaceShip.style.transition = "transform 0s";
-        setTimeout(() => {
-        
-        spaceShip.style.transition = "transform 10s ease";
-        spaceShip.style.transform = "scale(0.8)";
-        spaceShip.classList.remove("hidden-ship");
-
-      }, 100);
-        observer.unobserve(entry.target);
-      }
-    });
- }, { threshold: 0.5 });
-  observer.observe(spaceShip);
-};
+  const spaceShipAnimation = () => {
+    const spaceShip = document.querySelector(".space-ship");
+    const observer = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            spaceShip.style.transform = "scale(0)";
+            spaceShip.style.transition = "transform 0s";
+            setTimeout(() => {
+              spaceShip.style.transition = "transform 15s ease";
+              spaceShip.style.transform = "scale(0.8)";
+              spaceShip.classList.remove("hidden-ship");
+            }, 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(spaceShip);
+  };
 
   // Attach the scroll event listener
   window.addEventListener("scroll", handleScroll);
