@@ -118,6 +118,7 @@ p {
 
 .bird {
     position: relative;
+    top: -30%;
     z-index: 2000;
     transform: scale(0.3);
     opacity: 0.5;
@@ -1433,7 +1434,7 @@ p {
     color: #222;
     background: radial-gradient(circle, black 0%, rgb(43, 42, 42) 100%);
     background: radial-gradient(circle, #babaa3 0%,  #e6e6c8 100%);
-    background: linear-gradient(to bottom, #fff ,  #bdbdbd) ;
+    background: linear-gradient(to bottom, #f9f9f9 ,  #bdbdbd) ;
   }
   
   .btn:not(.disabled-btn):active {
@@ -1442,7 +1443,7 @@ p {
     color: #111;
     background: radial-gradient(circle,  black 0%, rgb(43, 42, 42) 100%);
     background: radial-gradient(circle, #92927b 0%,  #d4d4b5 100%);
-    background: linear-gradient(to bottom, #fff ,  #a3a3a3) ;
+    background: linear-gradient(to bottom, #f1f1f1 ,  #a3a3a3) ;
     box-shadow:
         inset 0 0 4px #e2e2c4,
         inset 1px 1px 1px transparent,
