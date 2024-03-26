@@ -168,7 +168,11 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const spaceShipAnimation = () => {
-    const spaceShip = document.querySelector(".space-ship");
+    const spaceShip  = document.querySelector(".space-ship");
+    const leftLaser  = document.querySelector(".laser--one");
+    const rightLaser = document.querySelector(".laser--two");
+    const footer     = document.querySelector(".footer");
+    const me         = document.querySelector(".me-torso");
     const observer = new IntersectionObserver(
       function (entries, observer) {
         entries.forEach((entry) => {
@@ -179,6 +183,23 @@ document.addEventListener("DOMContentLoaded", function () {
               spaceShip.style.transition = "transform 15s ease";
               spaceShip.style.transform = "scale(0.8)";
               spaceShip.classList.remove("hidden-ship");
+              setTimeout(() => {
+              me.style.top = "-78px";
+              me.style.transition = "top 7s ease";
+
+              }, 8000);
+
+              setTimeout(() => {
+                leftLaser.style.display = "block";
+                animateLaser(".laser--one", 537, -281, "left", 305);
+
+                rightLaser.style.display = "block";
+                animateLaser(".laser--two", 537, -281, "right", 55);
+                setTimeout(() => {
+                footer.style.display = "flex";
+              }, 300);
+              }, 15000);
+              
             }, 100);
             observer.unobserve(entry.target);
           }
@@ -188,6 +209,51 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     observer.observe(spaceShip);
   };
+
+  function animateLaser(
+    laserClass,
+    initialTop,
+    initialPosition,
+    positionProperty,
+    rotationAngle
+  ) {
+    const laser = document.querySelector(laserClass);
+    let start = null;
+    const speed = 1; // Speed of animation
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+
+      // Convert angle to radians
+      const angleInRadians = rotationAngle * (Math.PI / 180);
+
+      // Calculate movement along the angle
+      const deltaY = speed * progress * Math.sin(angleInRadians);
+      const deltaX = speed * progress * Math.cos(angleInRadians);
+      console.log(`DeltaX: ${deltaX}, DeltaY: ${deltaY}`);
+      // Apply calculated position changes
+
+      if (positionProperty === "left") {
+        laser.style.top = `${initialTop - deltaY}px`;
+        laser.style.left = `${initialPosition - deltaX}px`;
+      } else {
+        laser.style.top = `${initialTop + deltaY}px`;
+        laser.style.right = `${initialPosition - deltaX}px`;
+      }
+
+      // Continue the animation if within bounds
+      if (
+        parseInt(laser.style[positionProperty], 10) > -window.innerWidth &&
+        parseInt(laser.style[positionProperty], 10) < window.innerWidth &&
+        parseInt(laser.style.top, 10) < window.innerHeight
+      ) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
 
   // Attach the scroll event listener
   window.addEventListener("scroll", handleScroll);
