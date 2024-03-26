@@ -168,38 +168,48 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const spaceShipAnimation = () => {
-    const spaceShip  = document.querySelector(".space-ship");
-    const leftLaser  = document.querySelector(".laser--one");
+    const spaceShip = document.querySelector(".space-ship");
+    const leftLaser = document.querySelector(".laser--one");
     const rightLaser = document.querySelector(".laser--two");
-    const footer     = document.querySelector(".footer");
-    const me         = document.querySelector(".me-torso");
+    const footer = document.querySelector(".footer");
+    const me = document.querySelector(".me-torso");
+    const gunBarrel = document.querySelectorAll(".gun__barrel");
     const observer = new IntersectionObserver(
       function (entries, observer) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             spaceShip.style.transform = "scale(0)";
             spaceShip.style.transition = "transform 0s";
+
             setTimeout(() => {
               spaceShip.style.transition = "transform 15s ease";
               spaceShip.style.transform = "scale(0.8)";
               spaceShip.classList.remove("hidden-ship");
-              setTimeout(() => {
-              me.style.top = "-78px";
-              me.style.transition = "top 7s ease";
 
+              setTimeout(() => {
+                me.style.top = "-78px";
+                me.style.transition = "top 7s ease";
               }, 8000);
 
               setTimeout(() => {
                 leftLaser.style.display = "block";
                 animateLaser(".laser--one", 537, -281, "left", 305);
-
                 rightLaser.style.display = "block";
                 animateLaser(".laser--two", 537, -281, "right", 55);
+                gunBarrel.forEach((gunBarrel) => {
+                  gunBarrel.classList.add("gun__barrel--active");
+                });
+
                 setTimeout(() => {
-                footer.style.display = "flex";
-              }, 300);
+                  gunBarrel.forEach((gunBarrel) => {
+                    gunBarrel.classList.remove("gun__barrel--active");
+                  });
+                }, 200);
+
+                setTimeout(() => {
+                  footer.style.display = "flex";
+                }, 300);
               }, 15000);
-              
             }, 100);
             observer.unobserve(entry.target);
           }

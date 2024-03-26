@@ -843,6 +843,25 @@
             #000 30px);
 }
 
+.gun__barrel--active {
+    background: radial-gradient(circle,
+            #fff 3px,           
+            yellow 5px,
+            #ff0000 7px,
+            transparent 8px,
+            #666 11px,
+            #222 12px,
+            #666 13px,
+            #555 16px,
+            #222 17px,
+            #555 18px,
+            #444 21px,
+            #222 22px,
+            #666 23px,
+            #444 26px,
+            #000 30px);
+}
+
 .laser--one {
     display: none;
     position: absolute;
