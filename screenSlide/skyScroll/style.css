@@ -538,7 +538,7 @@ p {
 
     footer {
         display: none;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         height: 20vh;
         width: 125vw;
@@ -561,6 +561,14 @@ p {
             0 0 100px #ff0000,
             0 0 150px #ff0000;
         ;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        
     }
 
     .footer__border-top {
