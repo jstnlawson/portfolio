@@ -538,23 +538,25 @@ p {
 
     footer {
         display: none;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         height: 20vh;
         width: 125vw;
-        background: black;
+        background: linear-gradient(to right, #111, #333, #111);
         color: #fff;
         z-index: 99999;
         position: absolute;
         bottom: -25%;
+        padding: 40px;
         box-sizing: border-box;
         font-size: 50px;
+        font-family: monospace;
         text-shadow:  
             0 0 5px #ff0000,
             0 0 10px #ff0000,
             0 0 20px #ff0000,
             0 0 40px #ff0000,
-            0 0 80px #ff0000,
+            0 0 80px #3f0f0f,
             0 0 90px #ff0000,
             0 0 100px #ff0000,
             0 0 150px #ff0000;
