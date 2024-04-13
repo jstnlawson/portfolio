@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
         star.className = `star ${type}`;
 
         // Generate random positions within the specified ranges
-        const top = Math.random() * (135 - 55) + 55; // top: 55% to 135%
+        const top = Math.random() * (140 - 55) + 55; // top: 55% to 135%
         const left = Math.random() * (99 - 0) + 0; // left: 0% to 99%
 
         // Apply the positions
@@ -174,6 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const footer = document.querySelector(".footer");
     const me = document.querySelector(".me-torso");
     const gunBarrel = document.querySelectorAll(".gun__barrel");
+    const sunglasses = document.querySelector(".sunglasses");
     const observer = new IntersectionObserver(
       function (entries, observer) {
         entries.forEach((entry) => {
@@ -182,8 +183,35 @@ document.addEventListener("DOMContentLoaded", function () {
             spaceShip.style.transition = "transform 0s";
 
             setTimeout(() => {
-              spaceShip.style.transition = "transform 15s ease";
-              spaceShip.style.transform = "scale(0.8)";
+              // spaceShip.style.transition = "transform 15s ease";
+              // spaceShip.style.transform = "scale(0.8)";
+
+              let scaleValue = "scale(0.8)"; // Default scale
+              let transitionDuration = "15s"; // Default transition duration
+
+              // Check for screen sizes and adjust scaleValue and transitionDuration accordingly
+              if (window.matchMedia("(max-width: 400px)").matches) {
+                // For screens smaller than 400px
+                scaleValue = "scale(0.4)";
+                transitionDuration = "8s";
+              } else
+              if (window.matchMedia("(max-width: 600px)").matches) {
+                // For screens smaller than 400px
+                scaleValue = "scale(0.5)";
+                transitionDuration = "8s";
+              } else if (window.matchMedia("(max-width: 800px)").matches) {
+                // For screens smaller than 768px
+                scaleValue = "scale(0.6)";
+                transitionDuration = "10s";
+              } else if (window.matchMedia("(max-width: 1200px)").matches) {
+                // For screens smaller than 1024px
+                scaleValue = "scale(0.7)";
+                transitionDuration = "12s";
+              }
+
+              // Apply the adjusted scale and transition
+              spaceShip.style.transition = `transform ${transitionDuration} ease`;
+              spaceShip.style.transform = scaleValue;
               spaceShip.classList.remove("hidden-ship");
 
               setTimeout(() => {
@@ -208,6 +236,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 setTimeout(() => {
                   footer.style.display = "flex";
+                  sunglasses.style.opacity = "1";
+                  sunglasses.style.left = "-35px";
+                  sunglasses.style.transition = "left 1s ease";
                 }, 300);
               }, 15000);
             }, 100);
@@ -268,4 +299,23 @@ document.addEventListener("DOMContentLoaded", function () {
   // Attach the scroll event listener
   window.addEventListener("scroll", handleScroll);
   spaceShipAnimation();
+
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    speed: 1000,
+    // autoplay: {
+    //   delay: 5500,
+    //   disableOnInteraction: false,
+    // },
+    navigation: {
+      nextEl: ".next-button",
+      prevEl: ".previous-button",
+    },
+  });
 });
