@@ -3,6 +3,16 @@
     --swiper-navigation-size: 20px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+
 .swiper-button-next:after {
     content: '>';
     font-size: 20px;
@@ -703,13 +713,17 @@ footer {
     background: linear-gradient(to bottom, #ffffff, #dea6ae);
 }
 
+.meeboard-link { color: #ffc0c9; }
+
 .genderstanding {
     background: linear-gradient(
           to bottom,
           #56d0e3,
-          #fe5f3c
+          #dd7b65
           );
 }
+
+.genderstanding-link { color: #d78978; }
 
 .nhf {
     background: linear-gradient(
@@ -720,6 +734,19 @@ footer {
           );
 }
 
+.nhf-link { color: #6f92ad; }
+
+.meyouzik {
+    background: linear-gradient(
+          to bottom,
+          #111,
+          #fff,
+            #111
+          );
+}
+
+.meyouzik-link { color: #bbb; }
+
 .swiper-slide img {
     /* display: block; */
     width: 70%;
@@ -727,13 +754,13 @@ footer {
 }
 
 .project-info {
-    width: 30vw;
+    width: 35vw;
     color: #fff;
     height: fit-content;
 }
 
 .project-title {
-    text-wrap: nowrap;
+    text-wrap: balance;
 }
 
 .project-description {
@@ -744,32 +771,33 @@ footer {
     width: 100%;
     background: transparent;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 20px;
     position: relative;
     /* top: -25vh; */
     z-index: 99;
+    margin-top: 20px;
 }
 
 .previous-button,
 .next-button {
     background: transparent;
     border: none;
-    width: 55px;
-    height: 50px;
+    width: 80px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.previous-button {
-    margin-left: 10vw;
+/* .previous-button {
+    margin-left: 2px;
 }
 
 .next-button {
-    margin-right: 10vw;
-}
+    margin-right: 2px;
+} */
 
 
 .next-button-inside,
@@ -781,7 +809,7 @@ footer {
     justify-content: center;
     align-items: center;
     /* position: relative; */
-    border-radius: 50%;
+    /* border-radius: 50%; */
     height: 100%;
     width: 100%;
     background-size: 80px 80px;
@@ -791,6 +819,7 @@ footer {
 }
 
 .next-button-inside {
+    border-radius: 0 20px 20px 0;
     box-shadow:
         inset 1px 1px 1px 0.5px rgb(97, 97, 97),
         inset 1px 1px 0px black,
@@ -798,6 +827,7 @@ footer {
 }
 
 .previous-button-inside {
+    border-radius: 20px 0 0 20px;
     box-shadow:
         inset -1px 1px 1px 0.5px rgb(97, 97, 97),
         inset -1px 1px 0px black,
@@ -825,4 +855,87 @@ footer {
         inset 1px 1px 1px transparent,
         inset -1px -1px 1px transparent,
         2px 2px 4px transparent;
+}
+
+.remote-container {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.direction-buttons__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 10px solid #000;
+    overflow: hidden;
+}
+
+.direction-button {
+    height: 30px;
+    width: 60px;
+    height: 40px;
+    width: 100px;
+    background: turquoise;
+    color: black;
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0% 100%); /* Trapezium shape */
+    clip-path: polygon(40% 0, 60% 0, 100% 100%, 0% 100%);
+    position: absolute;
+    font-size: xx-large;
+    cursor: pointer;
+}
+
+.direction-button--up {
+    top: -2%;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.direction-button--left {
+    top: 50%;
+    left: -27%;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.direction-button--right {
+    top: 50%;
+    right: -27%;
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.direction-button--down {
+    bottom: -2%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.power-button__border {
+    height: 60px;
+    width: 60px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.power-button {
+    height: 30px;
+    width: 30px;
+    background: red;
+    color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
 }
