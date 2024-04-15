@@ -696,8 +696,13 @@ footer {
     align-items: center;
     width: 100%;
     /* padding-top: 15px; */
+    padding: 20px 0px;
     height: fit-content;
-    gap: 20px;
+    /* gap: 20px; */
+    background: linear-gradient(to right, #000, #222, #000);
+    border: 10px solid #222;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .projects__image-container {
@@ -882,13 +887,32 @@ footer {
     width: 60px;
     height: 40px;
     width: 100px;
-    background: turquoise;
+    background: linear-gradient(to right, #8de9fd, #555);
     color: black;
     clip-path: polygon(20% 0, 80% 0, 100% 100%, 0% 100%); /* Trapezium shape */
     clip-path: polygon(40% 0, 60% 0, 100% 100%, 0% 100%);
     position: absolute;
     font-size: xx-large;
     cursor: pointer;
+}
+
+.direction-button:hover {
+    background: linear-gradient(to right, #8de9fd, #fff);
+}
+
+.direction-button__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 98%;
+    width: 98%;
+    clip-path: polygon(40% 0, 60% 0, 100% 100%, 0% 100%);
+    background: linear-gradient(to right, #888, transparent);
+}
+
+.direction-button__inner:active {
+    background: linear-gradient(to right, #88888890, transparent);
 }
 
 .direction-button--up {
@@ -928,9 +952,14 @@ footer {
 }
 
 .power-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 30px;
     width: 30px;
     background: red;
+    background: linear-gradient(to right, #aaecfb9a, #555);
+    border: 1px solid #aaecfb8e;
     color: black;
     border-radius: 50%;
     position: absolute;
@@ -938,4 +967,5 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
+    font-size: x-large;
 }

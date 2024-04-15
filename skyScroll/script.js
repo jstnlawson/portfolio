@@ -314,8 +314,8 @@ document.addEventListener("DOMContentLoaded", function () {
     //   disableOnInteraction: false,
     // },
     navigation: {
-      nextEl: ".next-button",
-      prevEl: ".previous-button",
+      nextEl: ".direction-button--right",
+      prevEl: ".direction-button--left",
     },
   });
 });
