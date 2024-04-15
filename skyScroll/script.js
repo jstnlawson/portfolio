@@ -318,4 +318,51 @@ document.addEventListener("DOMContentLoaded", function () {
       prevEl: ".direction-button--left",
     },
   });
+
+    const powerButton = document.querySelector(".power-button");
+    const projectScreen = document.querySelectorAll(".projects");
+    const projectImages = document.querySelectorAll(".projects__image-container");
+    const projectInfos = document.querySelectorAll(".project-info");
+    const directionButtons = document.querySelectorAll(".direction-button");
+
+    powerButton.addEventListener("click", () => {
+      console.log("power button clicked");
+      if (projectImages.length > 0 && (projectImages[0].style.opacity === "0" || projectImages[0].style.opacity === "")) {
+        projectImages.forEach((image) => {
+          image.style.opacity = 1;
+        });
+        projectInfos.forEach((info) => {
+          info.style.opacity = 1;
+        });
+        directionButtons.forEach((button) => {
+          button.classList.add("power-on__direction-button");
+        });
+        powerButton.classList.add("power-on__power-button");
+        projectScreen.forEach((screen) => {
+          screen.classList.remove("screen-off");
+          screen.classList.add("screen-on");
+        });
+      } else {
+        projectImages.forEach((image) => {
+          image.style.opacity = 0;
+        });
+        projectInfos.forEach((info) => {
+          info.style.opacity = 0;
+        });
+        directionButtons.forEach((button) => {
+          button.classList.remove("power-on__direction-button");
+        });
+        powerButton.classList.remove("power-on__power-button");
+        setTimeout(() => {
+          projectScreen.forEach((screen) => {
+            screen.classList.remove("screen-on");
+            screen.classList.add("screen-off");
+          });
+        }, 1000);
+        return;
+      }     
+    });
+ 
+
+
 });
