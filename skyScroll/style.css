@@ -706,8 +706,10 @@ footer {
     width: 100%;
     padding: 20px 0 0 0;
     height: fit-content;
+    min-height: calc(35vw + 50px);
     border: 10px solid #222;
-    border-radius: 5px;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
     box-sizing: border-box;
 }
 
@@ -725,15 +727,54 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 30px;
+    height: 40px;
     background: #000;
-    background: linear-gradient(to bottom, #111, #222);
+    background: linear-gradient(to bottom, #222, #111);
     box-sizing: border-box;
+    border-radius: 0 0 5px 5px;
+}
 
+.power-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background: radial-gradient(circle, #000 0%, #555 100%);
+    background: linear-gradient(to bottom, #555, #222);
+    background: linear-gradient(to bottom, #222, #000);
+    color: #ffffffae;
+    border-radius: 18px;
+    border: 2px solid #000;
+    font-size: x-large;
+    cursor: pointer;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 40px #000,
+        0 0 80px #000,
+        0 0 90px #000,
+        0 0 100px #fff,
+        0 0 150px #fff
+    ;
+}
+
+.power-button:hover {
+    background: linear-gradient(to bottom, #444, #111);
+}
+
+.power-button:active {
+    opacity: 0.5;}
+
+.power-on__power-button {
+    background: linear-gradient(to bottom, #555, #222);
+    text-shadow: none;
 }
 
 .screen-on {
-    background: linear-gradient(to right, #000, #222, #000); 
+    background: linear-gradient(to right, #000, #222, #000);
+
 }
 
 .screen-off {
@@ -803,6 +844,14 @@ footer {
     transition: opacity 2.5s ease-in-out;
 }
 
+.project-info__intro {
+    width: 60vw;
+    /* color: #fff;
+    height: fit-content;
+    opacity: 0;
+    transition: opacity 2.5s ease-in-out; */
+}
+
 .project-title {
     text-wrap: balance;
 }
@@ -818,18 +867,8 @@ footer {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-}
-
-.remote-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: fit-content;
-    background: linear-gradient(to right, #333, #111, #333);
-    border-radius: 25px;
-    padding: 20px;
-    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 2.5s ease-in-out;
 }
 
 .direction-buttons__container{
@@ -902,7 +941,7 @@ footer {
     transform: translateX(-50%);
 }
 
-.power-button__border {
+.link-button__border {
     height: 60px;
     width: 60px;
     background: black;
@@ -914,7 +953,7 @@ footer {
     
 }
 
-.power-button {
+.link-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -930,12 +969,11 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    cursor: pointer;
     font-size: x-large;
 
 }
 
-.power-button__back-light {
+.link-button__back-light {
    
     height: 30px;
     width: 30px;
@@ -951,27 +989,26 @@ footer {
     transform: translate(-50%, -50%);
 }
 
-.power-on__power-button {
+.power-on__link-button {
     background: linear-gradient(to right, #c9f6ff7d, #ffffffb0);
     background: linear-gradient(to right, #8de9fd, #fff);
-
+cursor: pointer;
     border: 1px solid #eee;
 }
 
 .click-light {
-    display: none;
-    position: absolute;
-    top: 50%;
+    position: relative;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background: red;
+    transform: translateX(-50%);
+    opacity: 0;
+    background: #fff;
     background-image: radial-gradient(#ffffff, transparent);
     background-size: 5px 5px;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 3px;
     border-radius: 50%;
     border: solid 1px #555;
     box-shadow:
         0 0 3px #111 inset,
-        0 0 10px red;
+        0 0 10px #fff;
 }
