@@ -236,6 +236,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 setTimeout(() => {
                   footer.style.display = "flex";
+                  leftLaser.style.display = "none";
+                  rightLaser.style.display = "none";
                   sunglasses.style.opacity = "1";
                   sunglasses.style.left = "-35px";
                   sunglasses.style.transition = "left 1s ease";
@@ -319,14 +321,20 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-    const powerButton = document.querySelector(".power-button");
+  const powerButton = document.querySelector(".power-button");
+    const powerButtonBackLight = document.querySelector(".power-button__back-light");
     const projectScreen = document.querySelectorAll(".projects");
     const projectImages = document.querySelectorAll(".projects__image-container");
     const projectInfos = document.querySelectorAll(".project-info");
     const directionButtons = document.querySelectorAll(".direction-button");
+    const clickLight = document.querySelector(".click-light");
 
     powerButton.addEventListener("click", () => {
       console.log("power button clicked");
+      clickLight.style.display = "block";
+      setTimeout(() => {
+        clickLight.style.display = "none";
+      }, 250);
       if (projectImages.length > 0 && (projectImages[0].style.opacity === "0" || projectImages[0].style.opacity === "")) {
         projectImages.forEach((image) => {
           image.style.opacity = 1;
@@ -337,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
         directionButtons.forEach((button) => {
           button.classList.add("power-on__direction-button");
         });
-        powerButton.classList.add("power-on__power-button");
+        powerButtonBackLight.classList.add("power-on__power-button");
         projectScreen.forEach((screen) => {
           screen.classList.remove("screen-off");
           screen.classList.add("screen-on");
@@ -352,15 +360,24 @@ document.addEventListener("DOMContentLoaded", function () {
         directionButtons.forEach((button) => {
           button.classList.remove("power-on__direction-button");
         });
-        powerButton.classList.remove("power-on__power-button");
+        powerButtonBackLight.classList.remove("power-on__power-button");
         setTimeout(() => {
           projectScreen.forEach((screen) => {
             screen.classList.remove("screen-on");
             screen.classList.add("screen-off");
           });
-        }, 1000);
+        }, 2000);
         return;
       }     
+    });
+
+    directionButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        clickLight.style.display = "block";
+        setTimeout(() => {
+          clickLight.style.display = "none";
+        }, 250);
+      });
     });
  
 
