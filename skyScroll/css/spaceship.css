@@ -977,7 +977,7 @@
 @media screen and (max-width: 400px) {
     .space-ship {
         transform: scale(0.4);
-        top: 123%;
+        top: 132%;
     }
     
     /* .footer {

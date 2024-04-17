@@ -73,6 +73,13 @@ p {
       Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
 
+  @media screen and (max-width: 400px) {
+    .name-container {
+        margin: 10px 0 0 5px;
+    }
+    
+  }
+
   .divider {
     font-size: x-large;
     font-weight: 400;
@@ -144,6 +151,13 @@ p {
             transparent,
             transparent);
     z-index: 1;
+}
+
+@media screen and (max-width: 400px) {
+    .sun {
+        bottom: 35vh;
+    }
+    
 }
 
 .cloud {
@@ -605,27 +619,14 @@ p {
 
 footer {
     display: none;
-
-    /* display: flex; */
-
     justify-content: center;
     align-items: center;
     height: 20vh;
-    width: 125vw;
-
-    width: 100vw;
-
+    max-height: 150px;
     background: linear-gradient(to right, #111, #333, #111);
     color: #fff;
     z-index: 99999;
-    /* position: absolute; */
-
     position: relative;
-
-    /* bottom: -25%; */
-
-    /* bottom: 0; */
-
     padding: 40px;
     box-sizing: border-box;
     font-size: 50px;
@@ -640,20 +641,26 @@ footer {
         0 0 100px #ff0000,
         0 0 150px #ff0000;
     ;
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
 }
 
 .footer-links {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 100vw;
+    font-size: 2rem;
+    gap: 10px;
     max-width: 1200px;
+}
 
+@media screen and (max-width: 400px) {
+    .footer-links {
+        font-size: 1.65rem;
+    }
+    
 }
 
 .footer__border-top {
@@ -755,7 +762,7 @@ footer {
     width: 90%;
     padding: 20px 0 0 0;
     height: fit-content;
-    /* min-height: calc(35vw + 50px); */
+    min-height: 50vh;
     border: 10px solid #444;
     border-bottom: none;
     border-radius: 5px 5px 0 0;
@@ -1107,3 +1114,23 @@ footer {
     font-size: 0.85rem;
     margin-bottom: 10px;
   }
+
+  @media screen and (max-width: 500px){
+
+    .projects {
+        height: 60vh;
+    }
+    .projects__screen-content {
+        flex-direction: column;
+    }
+
+    .project-info {
+        width: 100%;
+        color: #fff;
+        height: fit-content;
+        opacity: 0;
+        transition: opacity 2.5s ease-in-out;
+        gap: 5px;
+    
+    }
+}

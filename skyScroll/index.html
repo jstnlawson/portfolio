@@ -86,75 +86,6 @@
         <div class="story__part-four">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-              <!-- <div class="swiper-slide">
-                <div class="projects screen-off">
-                  <div class="projects__screen-content">
-                    <div class="project-info project-info__intro">
-                      <p class="project-description">
-                        Welcome to the "projects" section of my portfolio. Use 
-                        the controller below to navigate through the projects.
-                        The ◀️ and ▶️ buttons to scroll through the projects, click
-                        the center button to view a project and click the 
-                        🔽 button to go to the next section of the portfolio.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-
-              <div class="swiper-slide">
-                <div class="projects screen-off">
-                  <div class="projects__screen-content">
-                    <div class="projects__image-container meeboard">
-                      <img src="images/meeboard-crop.png" />
-                    </div>
-                    <div class="project-info">
-                      <h3 class="project-title">
-                        <a
-                          href="https://fast-oasis-59176-b290032bbf92.herokuapp.com/#/user"
-                          target="blank"
-                          class="meeboard-link"
-                        >
-                          meeboard
-                        </a>
-                      </h3>
-                      <div class="tech-stack">web audio api | react | css</div>
-                      <p class="project-description">
-                        An audio sampler that automatically tunes your recorded
-                        sound to different pitches on the keyboard.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="projects screen-off">
-                  <div class="projects__screen-content">
-                    <div class="projects__image-container genderstanding">
-                      <img src="images/genderstanding-icon.png" />
-                    </div>
-                    <div class="project-info">
-                      <h3 class="project-title">
-                        <a
-                          href="https://github.com/Genderstanding/Genderstanding?tab=readme-ov-file"
-                          target="blank"
-                          class="genderstanding-link"
-                        >
-                          genderstanding
-                        </a>
-                      </h3>
-                      <div class="tech-stack">
-                        tailwind | redux-saga | react
-                      </div>
-                      <p class="project-description">
-                        An invite-only social media platform that provides a
-                        safe community space, allowing users to invite friends
-                        and family to ask questions anonymously.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <div class="swiper-slide">
                 <div class="projects screen-off">
                   <div class="projects__screen-content">
@@ -165,7 +96,7 @@
                       <a
                         href="https://www.northhardwoodfloors.com/"
                         target="blank"
-                        class="nhf-link"
+                        class="project-link nhf-link"
                       >
                         <h3 class="project-title">north</h3>
                         <h3 class="project-title">hardwood</h3>
@@ -190,11 +121,11 @@
                       <img src="images/meyouzik.png" />
                     </div>
                     <div class="project-info">
-                      <h3 class="project-title">
+                      <h3 class="project-title meyouzik-link">
                         <a
                           href="https://meyouzik-238a5c43b74c.herokuapp.com/"
                           target="blank"
-                          class="meyouzik-link"
+                          class="project-link"
                         >
                           meyouzik
                         </a>
@@ -205,6 +136,60 @@
                       <p class="project-description">
                         A web-based audio recorder built in the style of a reel
                         to reel tape recorder.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="projects screen-off">
+                  <div class="projects__screen-content">
+                    <div class="projects__image-container genderstanding">
+                      <img src="images/genderstanding-icon.png" />
+                    </div>
+                    <div class="project-info">
+                      <h3 class="project-title genderstanding-link">
+                        <a
+                          href="https://github.com/Genderstanding/Genderstanding?tab=readme-ov-file"
+                          target="blank"
+                          class="project-link"
+                        >
+                          genderstanding
+                        </a>
+                      </h3>
+                      <div class="tech-stack">
+                        tailwind | redux-saga | react
+                      </div>
+                      <p class="project-description">
+                        A mobile first invite-only social media platform that
+                        provides a safe community space, allowing users to
+                        invite friends and family to ask questions anonymously.
+                        This was group project built for a client.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="projects screen-off">
+                  <div class="projects__screen-content">
+                    <div class="projects__image-container meeboard">
+                      <img src="images/meeboard-crop.png" />
+                    </div>
+                    <div class="project-info">
+                      <h3 class="project-title meeboard-link">
+                        <a
+                          href="https://fast-oasis-59176-b290032bbf92.herokuapp.com/#/user"
+                          target="blank"
+                          class="project-link"
+                        >
+                          meeboard
+                        </a>
+                      </h3>
+                      <div class="tech-stack">web audio api | react | css</div>
+                      <p class="project-description">
+                        An audio sampler that automatically tunes your recorded
+                        sound to different pitches on the keyboard.
                       </p>
                     </div>
                   </div>
@@ -241,7 +226,7 @@
                 <div class="link-button__border">
                   <div class="link-button__back-light"></div>
 
-                  <button class="link-button direction-button--center"></button>
+                  <a href="#" id="link-button" class="link-button direction-button--center"></a>
                 </div>
               </div>
             </div>
@@ -371,13 +356,21 @@
       <div class="footer__border-right"></div>
       <div class="footer-links">
         <div>
-          <p class="footer-text">github</p>
+          <p class="footer-text">
+            <a href="https://www.linkedin.com/in/justin-lawson-732298281/"
+              >linkedin</a
+            >
+          </p>
         </div>
         <div>
-          <p class="footer-text">linkedin</p>
+          <p class="footer-text">
+            <a href="https://github.com/jstnlawson" target="_blank">github</a>
+          </p>
         </div>
         <div>
-          <p class="footer-text">contact</p>
+          <p class="footer-text">
+            <a href="mailto:jstn.lawson@gmail.com">email</a>
+          </p>
         </div>
       </div>
     </footer>

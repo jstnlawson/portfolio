@@ -303,11 +303,32 @@ document.addEventListener("DOMContentLoaded", function () {
     //   delay: 5500,
     //   disableOnInteraction: false,
     // },
+    pagination: {
+      el: '.swiper-pagination',
+  },
     navigation: {
       nextEl: ".direction-button--right",
       prevEl: ".direction-button--left",
     },
   });
+
+  const linkButton = document.getElementById("link-button");
+
+  function updateLinkButton() {
+    setTimeout(() => {
+      const currentLink = document.querySelector(".swiper-slide-active .project-link");
+    if (currentLink) {
+      linkButton.href = currentLink.href;
+    }
+  }, 50);
+  };
+
+
+  updateLinkButton();
+
+  swiper.on('slideChange', function () {
+    updateLinkButton();
+});
 
   const powerButton         = document.querySelector(".power-button");
   const powerButtonSVG      = document.querySelector(".power-button-svg");
