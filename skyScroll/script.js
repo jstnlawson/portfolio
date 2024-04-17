@@ -34,20 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const storyOne = document.querySelector(".sky__section-one");
   const storyOneBtn = document.querySelector(".story__part-one--btn");
-  // const storyTwo = document.querySelector(".sky__section-three");
-  // const storyTwoBtn = document.querySelector(".story__part-two--btn");
-  // const storyThree = document.querySelector(".sky__section-five");
-  // const storyThreeBtn = document.querySelector(".story__part-three--btn");
+  const sunButton = document.querySelector(".direction-button--up");
   const storyFour = document.querySelector(".story__part-four");
   const storyFourBtn = document.querySelector(".story__part-four--btn");
-
-  // storyOneBtn.addEventListener("click", () => {
-  //   smoothScrollTo(storyFour.offsetTop, 2500);
-  // });
-
-  // storyTwoBtn.addEventListener("click", () => {
-  //   smoothScrollTo(storyThree.offsetTop, 3500);
-  // });
 
   function getCumulativeOffset(element) {
     let top = 0;
@@ -60,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function smoothScrollToCenter(element, duration) {
-    const viewportHeight = window.innerHeight;
-    const elementHeight = element.offsetHeight;
+    const viewportHeight   = window.innerHeight;
+    const elementHeight    = element.offsetHeight;
     const elementOffsetTop = getCumulativeOffset(element);
 
     // Calculate the extra space above and below the element when it's centered
@@ -85,6 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   storyOneBtn.addEventListener("click", () => {
     smoothScrollToCenter(storyFour, 15000);
+  });
+
+  sunButton.addEventListener("click", () => {
+    smoothScrollToCenter(storyOne, 15000);
   });
 
   storyFourBtn.addEventListener("click", () => {
@@ -429,4 +422,36 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 250);
     });
   });
+
+  // const footer = document.querySelector('.footer');
+  // const documentHeight = () => document.documentElement.scrollHeight;
+  // const viewportHeight = () => window.innerHeight;
+
+  // function fadeFooter() {
+  //     const scrollFromBottom = documentHeight() - (window.scrollY + viewportHeight());
+  //     // The 100 here is the threshold in pixels from the bottom where the fading starts.
+  //     const opacity = Math.max(1, Math.min(1, scrollFromBottom / 10));
+  //     footer.style.opacity = opacity;
+  // }
+
+  // window.addEventListener('scroll', fadeFooter);
+  // fadeFooter();
+
+  const footer = document.querySelector('.footer');
+
+    function updateFooterOpacity() {
+        const scrollPosition = window.pageYOffset + window.innerHeight; // Current bottom of the viewport
+        const documentHeight = document.documentElement.scrollHeight; // Total height of the document
+        const distanceFromBottom = documentHeight - scrollPosition; // Distance from the bottom of the page
+
+        // Define the range in pixels over which the opacity will change from 1 to 0.
+        const fadeRange = 500; // Change this value to increase or decrease the fade effect range.
+        const opacity = 1 - Math.min(1, distanceFromBottom / fadeRange);
+
+        footer.style.opacity = opacity;
+    }
+
+    window.addEventListener('scroll', updateFooterOpacity);
+    updateFooterOpacity();
+
 });

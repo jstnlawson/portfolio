@@ -763,6 +763,7 @@ footer {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+
 }
 
 .projects__screen-content {
@@ -772,6 +773,7 @@ footer {
     width: 100%;
     box-sizing: border-box;
     padding-bottom: 20px;
+    gap: 20px;
 }
 
 .screen-panel {
@@ -915,14 +917,12 @@ footer {
     height: fit-content;
     opacity: 0;
     transition: opacity 2.5s ease-in-out;
+    gap: 5px;
+
 }
 
 .project-info__intro {
     width: 60vw;
-    /* color: #fff;
-    height: fit-content;
-    opacity: 0;
-    transition: opacity 2.5s ease-in-out; */
 }
 
 .project-title {
@@ -1102,3 +1102,8 @@ footer {
         0 0 3px #111 inset,
         0 0 10px #fff;
 }
+
+.tech-stack {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
