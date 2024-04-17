@@ -34,20 +34,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const storyOne = document.querySelector(".sky__section-one");
   const storyOneBtn = document.querySelector(".story__part-one--btn");
-  const storyTwo = document.querySelector(".sky__section-three");
-  const storyTwoBtn = document.querySelector(".story__part-two--btn");
-  const storyThree = document.querySelector(".sky__section-five");
-  const storyThreeBtn = document.querySelector(".story__part-three--btn");
+  // const storyTwo = document.querySelector(".sky__section-three");
+  // const storyTwoBtn = document.querySelector(".story__part-two--btn");
+  // const storyThree = document.querySelector(".sky__section-five");
+  // const storyThreeBtn = document.querySelector(".story__part-three--btn");
   const storyFour = document.querySelector(".story__part-four");
   const storyFourBtn = document.querySelector(".story__part-four--btn");
 
-  storyOneBtn.addEventListener("click", () => {
-    smoothScrollTo(storyTwo.offsetTop, 2500);
-  });
+  // storyOneBtn.addEventListener("click", () => {
+  //   smoothScrollTo(storyFour.offsetTop, 2500);
+  // });
 
-  storyTwoBtn.addEventListener("click", () => {
-    smoothScrollTo(storyThree.offsetTop, 3500);
-  });
+  // storyTwoBtn.addEventListener("click", () => {
+  //   smoothScrollTo(storyThree.offsetTop, 3500);
+  // });
 
   function getCumulativeOffset(element) {
     let top = 0;
@@ -75,15 +75,16 @@ document.addEventListener("DOMContentLoaded", function () {
       targetY = elementOffsetTop;
     } else {
       // Ensure we don't scroll to a negative offset
-      targetY = Math.max(targetY, 0);
+      // targetY = Math.max(targetY, 0);
+      targetY = Math.max(targetY - 20, 0); // Adjust the offset by 20px to add some padding
     }
 
     // Smooth scroll to the adjusted target position
     smoothScrollTo(targetY, duration);
   }
 
-  storyThreeBtn.addEventListener("click", () => {
-    smoothScrollToCenter(storyFour, 8500);
+  storyOneBtn.addEventListener("click", () => {
+    smoothScrollToCenter(storyFour, 15000);
   });
 
   storyFourBtn.addEventListener("click", () => {
@@ -91,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.scrollHeight,
       document.documentElement.scrollHeight
     );
-    smoothScrollTo(documentHeight, 6500); // Adjust the duration as needed
+    smoothScrollTo(documentHeight, 15000); // Adjust the duration as needed
   });
 
   function createStars() {
@@ -104,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         star.className = `star ${type}`;
 
         // Generate random positions within the specified ranges
-        const top = Math.random() * (140 - 55) + 55; // top: 55% to 135%
+        const top = Math.random() * (150 - 65) + 65; // top: 55% to 135%
         const left = Math.random() * (99 - 0) + 0; // left: 0% to 99%
 
         // Apply the positions
@@ -159,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const handleScroll = () => {
     if (!scrollInProgress) {
       requestAnimationFrame(() => {
-        applyTransform(bird, -6);
+        applyTransform(bird, -2);
         applyTransform(cloudOne, 4);
         scrollInProgress = false;
       });
@@ -316,6 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const powerButton         = document.querySelector(".power-button");
+  const powerButtonSVG      = document.querySelector(".power-button-svg");
   const linkButtonBackLight = document.querySelector( ".link-button__back-light");
   const projectScreen       = document.querySelectorAll(".projects");
   const projectImages       = document.querySelectorAll(".projects__image-container");
@@ -346,6 +348,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.classList.add("power-on__direction-button");
       });
       powerButton.classList.add("power-on__power-button");
+      powerButtonSVG.classList.add("power-on__power-button-svg");
       linkButtonBackLight.classList.add("power-on__link-button");
       remote.style.opacity = 1;
       projectScreen.forEach((screen) => {
@@ -364,6 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.classList.remove("power-on__direction-button");
       });
       powerButton.classList.remove("power-on__power-button");
+      powerButtonSVG.classList.remove("power-on__power-button-svg");
       linkButtonBackLight.classList.remove("power-on__link-button");
       remote.style.opacity = 0;
       setTimeout(() => {

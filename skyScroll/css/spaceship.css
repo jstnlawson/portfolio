@@ -14,8 +14,7 @@
     height: 700px;
     position: relative;
     position: absolute;
-    top: 80%;
-    top: 120%;
+    top: 128%;
     z-index: 5000;
     transform: scale(0.8);
     transition: transform 10s ease;
@@ -514,9 +513,9 @@
 
 
 .controls__container {
-    position: relative;
-    bottom: -16px;
-    width: 100%;
+    position: absolute;
+    bottom: 317px;
+    width: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -951,18 +950,18 @@
         transform: scale(0.7);
     }   
 
-    .footer {
+    /* .footer {
         width: 140vw;
-    }
+    } */
 }
 
 @media screen and (max-width: 800px) {
     .space-ship {
         transform: scale(0.6);
     }   
-    .footer {
+    /* .footer {
         width: 170vw;
-    }
+    } */
 }
 
 @media screen and (max-width: 600px) {
@@ -970,9 +969,9 @@
         transform: scale(0.5);
     }
     
-    .footer {
+    /* .footer {
         width: 200vw;
-    }
+    } */
 }
 
 @media screen and (max-width: 400px) {
@@ -981,9 +980,9 @@
         top: 123%;
     }
     
-    .footer {
+    /* .footer {
         width: 250vw;
         height: 35vh;
         bottom: -35%;
-    }
+    } */
 }

@@ -15,21 +15,29 @@
     <script src="script.js"></script>
   </head>
   <body>
+    <div class="name-container">
+      <h3>
+        justin lawson
+        <span class="divider"> | </span>
+        <span class="position-title">front end developer</span>
+      </h3>
+    </div>
     <div class="sky-scroll">
+      
       <div class="sky sky__section-one">
         <div class="story__part-one">
-          <button class="btn story__part-one--btn">click</button>
+          <button class="btn story__part-one--btn">projects</button>
         </div>
       </div>
       <div class="sky sky__section-two"></div>
       <div class="sky sky__section-three">
-        <div class="story story__part-two">
+        <!-- <div class="story story__part-two">
           <h1 class="story-title">section 2</h1>
           <p class="story-text">
             I'm a front-end developer and I excel at some aspects of it.
           </p>
           <button class="btn story__part-two--btn">⬇</button>
-        </div>
+        </div> -->
         <div class="cloud-one__container">
           <div class="white-wisp--top"></div>
           <div class="white-wisp--middle"></div>
@@ -64,11 +72,11 @@
         </div>
       </div>
       <div class="sky sky__section-five">
-        <div class="story story__part-three">
+        <!-- <div class="story story__part-three">
           <h1 class="story-title">section 3</h1>
           <p class="story-text">I used to do other things.</p>
           <button class="btn story__part-three--btn">⬇</button>
-        </div>
+        </div> -->
       </div>
       <div class="sun"></div>
 
@@ -80,7 +88,7 @@
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
 
-              <div class="swiper-slide">
+              <!-- <div class="swiper-slide">
                 <div class="projects screen-off">
                   <div class="projects__screen-content">
                     <div class="project-info project-info__intro">
@@ -94,7 +102,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <div class="swiper-slide">
                 <div class="projects screen-off">
@@ -194,14 +202,16 @@
               </div>
             </div>
             <div class="screen-panel">
-              <button class="power-button">⌽</button>
+              <button class="power-button">
+                <img class="power-button-svg" src="images/power-button.svg" />
+              </button>
             </div>
             <div class="click-light"></div>
 
             <div class="remote-container">
               <div class="direction-buttons__container">
                 <button class="direction-button direction-button--up">
-                  <span class="direction-button__inner">⏷</span>
+                  <span class="direction-button__inner"><span class="button-up__text">sun</span></span>
                 </button>
                 <button class="direction-button direction-button--left">
                   <span class="direction-button__inner">⏷</span>
@@ -212,7 +222,7 @@
                 <button
                   class="direction-button direction-button--down story__part-four--btn"
                 >
-                  <span class="direction-button__inner">⏷</span>
+                  <span class="direction-button__inner"><span class="contact-button__text">stars</span></span>
                 </button>
                 <div class="link-button__border">
                   <div class="link-button__back-light"></div>
@@ -349,7 +359,7 @@
             </div>
             <div class="laser--one"></div>
             <div class="laser--two"></div>
-            <footer class="footer">
+            <!-- <footer class="footer">
               <div class="footer__border-top"></div>
               <div class="footer__border-bottom"></div>
               <div class="footer__border-left"></div>
@@ -365,10 +375,28 @@
                   <p class="footer-text">contact</p>
                 </div>
               </div>
-            </footer>
+            </footer> -->
           </div>
         </div>
       </div>
+      
     </div>
+    <footer class="footer">
+      <div class="footer__border-top"></div>
+      <div class="footer__border-bottom"></div>
+      <div class="footer__border-left"></div>
+      <div class="footer__border-right"></div>
+      <div class="footer-links">
+        <div>
+          <p class="footer-text">github</p>
+        </div>
+        <div>
+          <p class="footer-text">linkedin</p>
+        </div>
+        <div>
+          <p class="footer-text">contact</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
