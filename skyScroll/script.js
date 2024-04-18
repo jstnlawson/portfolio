@@ -1,16 +1,83 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("screenSlide/skyScroll/script.js");
 
+  var modal = document.getElementById('startModal');
+    modal.classList.add('show');
+
+    document.getElementById('startButton').addEventListener('click', function() {
+      closeModal();
+  });
+
+    function closeModal() {
+      var modal = document.getElementById('startModal');
+      modal.classList.remove('show');
+  }
+
+  let soundAllowed = false;
+  let sfx = {};
+
+  // Function to handle the first user interaction
+  document.addEventListener("click", function handleFirstInteraction() {
+    if (!soundAllowed) {
+      // Check if sound has already been initialized
+      sfx = {
+        pewPew: new Howl({
+          src: ["./audio/pew-pew.mp3"],
+        }),
+        breeze: new Howl({
+          src: ["./audio/breeze.mp3"],
+          volume: 0.5,
+        }),
+        clickOn: new Howl({
+          src: ["./audio/click-on.mp3"],
+        }),
+        clickOff: new Howl({
+          src: ["./audio/click-off.mp3"],
+        }),
+      };
+      console.log("Sounds initialized.");
+      soundAllowed = true; // Set flag to true after initializing sounds
+      document.removeEventListener("click", handleFirstInteraction); // Optionally remove listener
+    }
+  });
+
+  // Function to play sound, checking if it's allowed
+  // function playPewPewSound() {
+  //   if (soundAllowed && sfx.pewPew) {
+  //     // Ensure sound is initialized and allowed
+  //     sfx.pewPew.play();
+  //     console.log("Sound played.");
+  //   } else {
+  //     console.log("Sound not allowed or not initialized.");
+  //   }
+  // }
+
+  //   function handleAnyClick(event) {
+  //     console.log('A click occurred:', event);
+  //    soundAllowed = true;
+  // }
+
+  // document.addEventListener('click', handleAnyClick);
+
+  // if (soundAllowed) {
+  // let sfx = {
+  //   pewPew: new Howl({
+  //       src: ["./audio/pew-pew.mp3"]
+  //   })
+  // };
+  // console.log('Sounds initialized.');
+  // }
+
   // Smooth scroll function to customize speed and easing
   function smoothScrollTo(targetY, duration) {
-    const startY = window.scrollY;
+    const startY   = window.scrollY;
     const distance = targetY - startY;
-    let startTime = null;
+    let startTime  = null;
 
     function scrollAnimation(currentTime) {
       if (startTime === null) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
-      const nextY = easeFunction(timeElapsed, startY, distance, duration);
+      const nextY       = easeFunction(timeElapsed, startY, distance, duration);
 
       window.scrollTo(0, nextY);
 
@@ -67,13 +134,17 @@ document.addEventListener("DOMContentLoaded", function () {
       // targetY = Math.max(targetY, 0);
       targetY = Math.max(targetY - 20, 0); // Adjust the offset by 20px to add some padding
     }
-
+    if (!sfx.breeze.playing()) {
+      sfx.breeze.play();
+    }
+    // sfx.breeze.play();
     // Smooth scroll to the adjusted target position
     smoothScrollTo(targetY, duration);
   }
 
   storyOneBtn.addEventListener("click", () => {
     smoothScrollToCenter(storyFour, 15000);
+    
   });
 
   sunButton.addEventListener("click", () => {
@@ -162,14 +233,14 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const spaceShipAnimation = () => {
-    const spaceShip  = document.querySelector(".space-ship");
-    const leftLaser  = document.querySelector(".laser--one");
+    const spaceShip = document.querySelector(".space-ship");
+    const leftLaser = document.querySelector(".laser--one");
     const rightLaser = document.querySelector(".laser--two");
-    const footer     = document.querySelector(".footer");
-    const me         = document.querySelector(".me-torso");
-    const gunBarrel  = document.querySelectorAll(".gun__barrel");
+    const footer = document.querySelector(".footer");
+    const me = document.querySelector(".me-torso");
+    const gunBarrel = document.querySelectorAll(".gun__barrel");
     const sunglasses = document.querySelector(".sunglasses");
-    const observer   = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       function (entries, observer) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -208,6 +279,8 @@ document.addEventListener("DOMContentLoaded", function () {
               }, 8000);
 
               setTimeout(() => {
+                sfx.pewPew.play();
+                // playPewPewSound();
                 leftLaser.style.display = "block";
                 animateLaser(".laser--one", 537, -281, "left", 305);
                 rightLaser.style.display = "block";
@@ -304,8 +377,8 @@ document.addEventListener("DOMContentLoaded", function () {
     //   disableOnInteraction: false,
     // },
     pagination: {
-      el: '.swiper-pagination',
-  },
+      el: ".swiper-pagination",
+    },
     navigation: {
       nextEl: ".direction-button--right",
       prevEl: ".direction-button--left",
@@ -316,29 +389,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateLinkButton() {
     setTimeout(() => {
-      const currentLink = document.querySelector(".swiper-slide-active .project-link");
-    if (currentLink) {
-      linkButton.href = currentLink.href;
-    }
-  }, 50);
-  };
-
+      const currentLink = document.querySelector(
+        ".swiper-slide-active .project-link"
+      );
+      if (currentLink) {
+        linkButton.href = currentLink.href;
+      }
+    }, 50);
+  }
 
   updateLinkButton();
 
-  swiper.on('slideChange', function () {
+  swiper.on("slideChange", function () {
     updateLinkButton();
-});
+  });
 
-  const powerButton         = document.querySelector(".power-button");
-  const powerButtonSVG      = document.querySelector(".power-button-svg");
-  const linkButtonBackLight = document.querySelector( ".link-button__back-light");
-  const projectScreen       = document.querySelectorAll(".projects");
-  const projectImages       = document.querySelectorAll(".projects__image-container");
-  const projectInfos        = document.querySelectorAll(".project-info");
-  const directionButtons    = document.querySelectorAll(".direction-button");
-  const clickLight          = document.querySelector(".click-light");
-  const remote              = document.querySelector(".remote-container");
+  const powerButton = document.querySelector(".power-button");
+  const powerButtonSVG = document.querySelector(".power-button-svg");
+  const linkButtonBackLight = document.querySelector(
+    ".link-button__back-light"
+  );
+  const projectScreen = document.querySelectorAll(".projects");
+  const projectImages = document.querySelectorAll(".projects__image-container");
+  const projectInfos = document.querySelectorAll(".project-info");
+  const directionButtons = document.querySelectorAll(".direction-button");
+  const clickLight = document.querySelector(".click-light");
+  const remote = document.querySelector(".remote-container");
 
   let isScreenOn = false;
 
@@ -352,6 +428,7 @@ document.addEventListener("DOMContentLoaded", function () {
     isScreenOn = !isScreenOn;
 
     if (isScreenOn) {
+      sfx.clickOn.play();
       projectImages.forEach((image) => {
         image.style.opacity = 1;
       });
@@ -371,6 +448,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     } else {
       // Turn all screens off
+      sfx.clickOff.play();
       projectImages.forEach((image) => {
         image.style.opacity = 0;
       });
@@ -393,48 +471,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // powerButton.addEventListener("click", () => {
-  //   console.log("power button clicked");
-  //   clickLight.style.opacity = "1";
-  //   setTimeout(() => {
-  //     clickLight.style.opacity = "0";
-  //   }, 250);
-  //   if (projectImages.length > 0 && (projectImages[0].style.opacity === "0" || projectImages[0].style.opacity === "")) {
-  //     projectImages.forEach((image) => {
-  //       image.style.opacity = 1;
-  //     });
-  //     projectInfos.forEach((info) => {
-  //       info.style.opacity = 1;
-  //     });
-  //     directionButtons.forEach((button) => {
-  //       button.classList.add("power-on__direction-button");
-  //     });
-  //     linkButtonBackLight.classList.add("power-on__link-button");
-  //     projectScreen.forEach((screen) => {
-  //       screen.classList.remove("screen-off");
-  //       screen.classList.add("screen-on");
-  //     });
-  //   } else {
-  //     projectImages.forEach((image) => {
-  //       image.style.opacity = 0;
-  //     });
-  //     projectInfos.forEach((info) => {
-  //       info.style.opacity = 0;
-  //     });
-  //     directionButtons.forEach((button) => {
-  //       button.classList.remove("power-on__direction-button");
-  //     });
-  //     linkButtonBackLight.classList.remove("power-on__link-button");
-  //     setTimeout(() => {
-  //       projectScreen.forEach((screen) => {
-  //         screen.classList.remove("screen-on");
-  //         screen.classList.add("screen-off");
-  //       });
-  //     }, 2000);
-  //     return;
-  //   }
-  // });
-
   directionButtons.forEach((button) => {
     button.addEventListener("click", () => {
       clickLight.style.opacity = "1";
@@ -444,35 +480,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // const footer = document.querySelector('.footer');
-  // const documentHeight = () => document.documentElement.scrollHeight;
-  // const viewportHeight = () => window.innerHeight;
+  const footer = document.querySelector(".footer");
 
-  // function fadeFooter() {
-  //     const scrollFromBottom = documentHeight() - (window.scrollY + viewportHeight());
-  //     // The 100 here is the threshold in pixels from the bottom where the fading starts.
-  //     const opacity = Math.max(1, Math.min(1, scrollFromBottom / 10));
-  //     footer.style.opacity = opacity;
+  function updateFooterOpacity() {
+    const scrollPosition = window.pageYOffset + window.innerHeight; // Current bottom of the viewport
+    const documentHeight = document.documentElement.scrollHeight; // Total height of the document
+    const distanceFromBottom = documentHeight - scrollPosition; // Distance from the bottom of the page
+
+    // Define the range in pixels over which the opacity will change from 1 to 0.
+    const fadeRange = 500; // Change this value to increase or decrease the fade effect range.
+    const opacity = 1 - Math.min(1, distanceFromBottom / fadeRange);
+
+    footer.style.opacity = opacity;
+  }
+
+  window.addEventListener("scroll", updateFooterOpacity);
+  updateFooterOpacity();
+
+  //   document.addEventListener('click', function unlockAudio() {
+  //     if (Howler.ctx.state === 'suspended') {
+  //         Howler.ctx.resume();
+  //     }
+  //     // Remove the event listener once the audio context is resumed
+  //     document.removeEventListener('click', unlockAudio);
+  // });
+
+  // const sfx = {
+  //   pewPew: new Howl({
+  //     src: [
+  //       "./audio/pew-pew.mp3"
+  //     ]
+  //   }),
   // }
-
-  // window.addEventListener('scroll', fadeFooter);
-  // fadeFooter();
-
-  const footer = document.querySelector('.footer');
-
-    function updateFooterOpacity() {
-        const scrollPosition = window.pageYOffset + window.innerHeight; // Current bottom of the viewport
-        const documentHeight = document.documentElement.scrollHeight; // Total height of the document
-        const distanceFromBottom = documentHeight - scrollPosition; // Distance from the bottom of the page
-
-        // Define the range in pixels over which the opacity will change from 1 to 0.
-        const fadeRange = 500; // Change this value to increase or decrease the fade effect range.
-        const opacity = 1 - Math.min(1, distanceFromBottom / fadeRange);
-
-        footer.style.opacity = opacity;
-    }
-
-    window.addEventListener('scroll', updateFooterOpacity);
-    updateFooterOpacity();
-
 });
